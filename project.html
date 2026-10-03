@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <title>Carports, Patio Roofs & Palisades | Quality Steelwork Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Carports, patio roofs, palisade fencing, steelwork and professional installation services.">
+  <meta name="description" content="Quality carports, patio roofs, palisade fencing and steelwork solutions with supply and professional installation.">
+  <link href="img/favicon.ico" rel="icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind Play CDN (fine for testing; for production build Tailwind with its CLI) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { DEFAULT: '#1f5eff', dark: '#1646c7', soft: '#eaf0ff' } },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    [hidden] { display: none !important; }
+    .blueprint {
+      background-image:
+        linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .slide { opacity: 0; visibility: hidden; transition: opacity .8s ease, visibility .8s; }
+    .slide.is-active { opacity: 1; visibility: visible; }
+    .slide.is-active .slide-copy { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .slide, .slide.is-active .slide-copy { transition: none; animation: none; }
+    }
+    .tab-btn[aria-selected="true"] { background: #000; color: #fff; border-color: #000; }
+    .tab-btn[aria-selected="true"] .tab-bar { background: #1f5eff; width: 100%; }
+  </style>
+</head>
+
+<body class="bg-white font-sans text-neutral-700 antialiased">
+
+  <!-- Topbar -->
+  <div class="hidden bg-black text-sm text-neutral-300 lg:block">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5">
+      <div class="flex items-center gap-6">
+        <a href="tel:+27000000000" class="flex items-center gap-2 transition hover:text-white"><i class="fa fa-phone-alt text-brand"></i>+27 XX XXX XXXX</a>
+        <a href="mailto:info@yourbusiness.co.za" class="flex items-center gap-2 transition hover:text-white"><i class="fa fa-envelope text-brand"></i>info@yourbusiness.co.za</a>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Privacy</a>
+        <span class="h-4 w-px bg-neutral-700"></span>
+        <a href="#" aria-label="Facebook" class="hover:text-brand"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter" class="hover:text-brand"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-brand"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram" class="hover:text-brand"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3 font-display text-xl font-extrabold tracking-tight text-black">
+        <img src="img/icons/icon-1.png" alt="" class="h-9 w-9">
+        SteelShade <span class="text-brand">Solutions</span>
+      </a>
+
+      <div class="hidden items-center gap-8 text-[15px] font-medium text-neutral-600 lg:flex">
+        <a href="index.html" class="border-b-2 border-brand pb-1 text-black">Home</a>
+        <a href="about.html" class="transition hover:text-black">About</a>
+        <a href="service.html" class="transition hover:text-black">Services</a>
+        <div class="group relative">
+          <button class="flex items-center gap-1 transition hover:text-black">Pages <i class="fa fa-chevron-down text-[10px]"></i></button>
+          <div class="invisible absolute left-0 top-full w-56 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div class="rounded-xl border border-neutral-200 bg-white p-2 shadow-xl">
+              <a href="feature.html" class="block rounded-lg px-4 py-2 hover:bg-brand-soft hover:text-brand">Why Choose Us</a>
+              <a href="project.html" class="block rounded-lg px-4 py-2 hover:bg-brand-soft hover:text-brand">Our Projects</a>
+              <a href="team.html" class="block rounded-lg px-4 py-2 hover:bg-brand-soft hover:text-brand">Our Team</a>
+              <a href="appointment.html" class="block rounded-lg px-4 py-2 hover:bg-brand-soft hover:text-brand">Get a Quote</a>
+              <a href="testimonial.html" class="block rounded-lg px-4 py-2 hover:bg-brand-soft hover:text-brand">Testimonials</a>
+              <a href="404.html" class="block rounded-lg px-4 py-2 hover:bg-brand-soft hover:text-brand">404 Page</a>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="transition hover:text-black">Contact</a>
+      </div>
+
+      <a href="appointment.html" class="hidden rounded-full bg-black px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand lg:block">Get a quote</a>
+
+      <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 text-black lg:hidden">
+        <i class="fa fa-bars"></i>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-200 bg-white px-6 pb-6 lg:hidden">
+      <div class="flex flex-col py-2 font-medium text-neutral-700">
+        <a href="index.html" class="border-b border-neutral-100 py-3 text-brand">Home</a>
+        <a href="about.html" class="border-b border-neutral-100 py-3">About</a>
+        <a href="service.html" class="border-b border-neutral-100 py-3">Services</a>
+        <a href="project.html" class="border-b border-neutral-100 py-3">Our Projects</a>
+        <a href="testimonial.html" class="border-b border-neutral-100 py-3">Testimonials</a>
+        <a href="contact.html" class="py-3">Contact</a>
+      </div>
+      <a href="appointment.html" class="mt-2 block rounded-full bg-brand py-3 text-center font-semibold text-white">Get a quote</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero slider -->
+    <section id="hero" class="relative h-[640px] overflow-hidden bg-black lg:h-[720px]" aria-roledescription="carousel" aria-label="Featured services">
+      <div class="slide is-active absolute inset-0">
+        <img src="img/carousel-1.jpg" alt="Carport Installation" class="h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/10"></div>
+        <div class="absolute inset-0 flex items-center">
+          <div class="slide-copy mx-auto w-full max-w-7xl px-6">
+            <h1 class="max-w-3xl font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">Quality carports, patio roofs and palisades</h1>
+            <p class="mt-6 max-w-xl text-lg text-neutral-200">We supply and install durable carports, stylish patio roofs, palisade fencing and custom steelwork solutions designed to improve the protection, security and appearance of your property.</p>
+            <a href="service.html" class="mt-9 inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-white transition hover:bg-white hover:text-black">Explore our services</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide absolute inset-0">
+        <img src="img/carousel-2.jpg" alt="Patio Roof Installation" class="h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/10"></div>
+        <div class="absolute inset-0 flex items-center">
+          <div class="slide-copy mx-auto w-full max-w-7xl px-6">
+            <h2 class="max-w-3xl font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">Create shade, comfort and protection</h2>
+            <p class="mt-6 max-w-xl text-lg text-neutral-200">Transform your outdoor space with professionally installed patio roofs and shade structures designed around your property and lifestyle.</p>
+            <a href="service.html" class="mt-9 inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-white transition hover:bg-white hover:text-black">View our services</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide absolute inset-0">
+        <img src="img/carousel-3.jpg" alt="Palisade Fencing Installation" class="h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/10"></div>
+        <div class="absolute inset-0 flex items-center">
+          <div class="slide-copy mx-auto w-full max-w-7xl px-6">
+            <h2 class="max-w-3xl font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">Professional steelwork and installation</h2>
+            <p class="mt-6 max-w-xl text-lg text-neutral-200">From vehicle protection to property security, we provide practical steelwork solutions with quality materials and professional installation.</p>
+            <a href="appointment.html" class="mt-9 inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-white transition hover:bg-white hover:text-black">Request a quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute inset-x-0 bottom-0 z-10">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 pb-8">
+          <div id="heroDots" class="flex gap-2"></div>
+          <div class="flex gap-2">
+            <button id="heroPrev" aria-label="Previous slide" class="flex h-12 w-12 items-center justify-center rounded-full border border-white/40 text-white transition hover:bg-brand hover:border-brand"><i class="fa fa-arrow-left"></i></button>
+            <button id="heroNext" aria-label="Next slide" class="flex h-12 w-12 items-center justify-center rounded-full border border-white/40 text-white transition hover:bg-brand hover:border-brand"><i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="h-1.5 bg-brand"></div>
+      </div>
+    </section>
+
+    <!-- Facts -->
+    <section class="py-20 lg:py-24">
+      <div class="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-neutral-200 p-8 transition hover:border-brand">
+          <span class="flex h-16 w-16 items-center justify-center rounded-xl bg-black"><img src="img/icons/icon-2.png" alt="" class="h-9 w-9"></span>
+          <h3 class="mt-6 font-display text-2xl font-bold text-black">Quality workmanship</h3>
+          <p class="mt-3 leading-relaxed">We focus on durable materials, strong construction and neat finishing to provide steelwork solutions built for everyday use.</p>
+        </article>
+        <article class="rounded-2xl border border-neutral-200 p-8 transition hover:border-brand">
+          <span class="flex h-16 w-16 items-center justify-center rounded-xl bg-black"><img src="img/icons/icon-3.png" alt="" class="h-9 w-9"></span>
+          <h3 class="mt-6 font-display text-2xl font-bold text-black">Custom solutions</h3>
+          <p class="mt-3 leading-relaxed">Every property is different, which is why our carports, patio roofs and steelwork can be tailored to your requirements.</p>
+        </article>
+        <article class="rounded-2xl border border-neutral-200 p-8 transition hover:border-brand">
+          <span class="flex h-16 w-16 items-center justify-center rounded-xl bg-black"><img src="img/icons/icon-4.png" alt="" class="h-9 w-9"></span>
+          <h3 class="mt-6 font-display text-2xl font-bold text-black">Professional installation</h3>
+          <p class="mt-3 leading-relaxed">Our supply and installation service provides customers with a convenient solution from project planning through to completion.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="pb-20 lg:pb-28">
+      <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
+        <div class="relative pb-16 pr-10 lg:pb-20">
+          <img src="img/about-1.jpg" alt="Steelwork Installation" class="aspect-[4/5] w-4/5 rounded-2xl object-cover">
+          <img src="img/about-2.jpg" alt="Carport and Patio Roof" class="absolute bottom-0 right-0 aspect-square w-1/2 rounded-2xl border-8 border-white object-cover shadow-2xl">
+          <div class="absolute -left-3 top-8 rounded-xl bg-brand px-5 py-4 text-white shadow-xl">
+            <p class="font-display text-4xl font-extrabold leading-none">100%</p>
+            <p class="mt-1 text-sm text-blue-100">Quality steelwork</p>
+          </div>
+        </div>
+        <div>
+          <p class="mb-3 font-semibold text-brand">About us</p>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-black sm:text-5xl">Reliable steelwork solutions for your property</h2>
+          <p class="mt-6 max-w-prose text-lg leading-relaxed">We specialise in the supply and installation of carports, patio roofs, palisade fencing and custom steelwork solutions for residential and commercial properties.</p>
+          <p class="mt-4 max-w-prose leading-relaxed">Our aim is to provide practical, attractive and durable structures that improve the functionality, protection and appearance of your property. From vehicle protection and outdoor entertainment areas to improved property security, we provide solutions designed around each customer's requirements.</p>
+          <a href="about.html" class="mt-10 inline-block rounded-full bg-black px-8 py-3.5 font-semibold text-white transition hover:bg-brand">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="bg-black py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-14 max-w-2xl">
+          <p class="mb-3 font-semibold text-brand">Our services</p>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">Practical, durable and stylish steelwork solutions</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="group relative flex min-h-[420px] overflow-hidden rounded-2xl">
+            <img src="img/service-1.jpg" alt="Carports" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10 transition group-hover:from-brand-dark group-hover:via-brand-dark/80"></div>
+            <div class="relative mt-auto p-7 text-white">
+              <img src="img/icons/icon-5.png" alt="" class="mb-4 h-11 w-11">
+              <h3 class="font-display text-2xl font-bold">Carports</h3>
+              <p class="mt-2 text-neutral-200">Protect your vehicles from sun, rain and other weather conditions with strong and professionally installed carports designed for your property.</p>
+              <a href="service.html" class="mt-4 inline-flex items-center gap-2 font-semibold hover:underline">Read more <i class="fa fa-arrow-right text-xs"></i></a>
+            </div>
+          </article>
+
+          <article class="group relative flex min-h-[420px] overflow-hidden rounded-2xl">
+            <img src="img/service-2.jpg" alt="Patio Roofs" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10 transition group-hover:from-brand-dark group-hover:via-brand-dark/80"></div>
+            <div class="relative mt-auto p-7 text-white">
+              <img src="img/icons/icon-6.png" alt="" class="mb-4 h-11 w-11">
+              <h3 class="font-display text-2xl font-bold">Patio roofs</h3>
+              <p class="mt-2 text-neutral-200">Create a comfortable outdoor living area with stylish patio roofs designed to provide shade, protection and additional usable space.</p>
+              <a href="service.html" class="mt-4 inline-flex items-center gap-2 font-semibold hover:underline">Read more <i class="fa fa-arrow-right text-xs"></i></a>
+            </div>
+          </article>
+
+          <article class="group relative flex min-h-[420px] overflow-hidden rounded-2xl">
+            <img src="img/service-3.jpg" alt="Palisade Fencing" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10 transition group-hover:from-brand-dark group-hover:via-brand-dark/80"></div>
+            <div class="relative mt-auto p-7 text-white">
+              <img src="img/icons/icon-7.png" alt="" class="mb-4 h-11 w-11">
+              <h3 class="font-display text-2xl font-bold">Palisade fencing</h3>
+              <p class="mt-2 text-neutral-200">Improve your property's security and appearance with durable palisade fencing supplied and installed according to your requirements.</p>
+              <a href="service.html" class="mt-4 inline-flex items-center gap-2 font-semibold hover:underline">Read more <i class="fa fa-arrow-right text-xs"></i></a>
+            </div>
+          </article>
+
+          <article class="group relative flex min-h-[420px] overflow-hidden rounded-2xl">
+            <img src="img/service-4.jpg" alt="Steelwork Installations" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10 transition group-hover:from-brand-dark group-hover:via-brand-dark/80"></div>
+            <div class="relative mt-auto p-7 text-white">
+              <img src="img/icons/icon-8.png" alt="" class="mb-4 h-11 w-11">
+              <h3 class="font-display text-2xl font-bold">Steelwork installations</h3>
+              <p class="mt-2 text-neutral-200">We provide quality steelwork installations for residential and commercial properties, with solutions tailored to each project.</p>
+              <a href="service.html" class="mt-4 inline-flex items-center gap-2 font-semibold hover:underline">Read more <i class="fa fa-arrow-right text-xs"></i></a>
+            </div>
+          </article>
+
+          <article class="group relative flex min-h-[420px] overflow-hidden rounded-2xl">
+            <img src="img/service-5.jpg" alt="Custom Shade Structures" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10 transition group-hover:from-brand-dark group-hover:via-brand-dark/80"></div>
+            <div class="relative mt-auto p-7 text-white">
+              <img src="img/icons/icon-9.png" alt="" class="mb-4 h-11 w-11">
+              <h3 class="font-display text-2xl font-bold">Custom shade structures</h3>
+              <p class="mt-2 text-neutral-200">Create practical shaded areas with custom structures designed to provide protection while complementing your property's appearance.</p>
+              <a href="service.html" class="mt-4 inline-flex items-center gap-2 font-semibold hover:underline">Read more <i class="fa fa-arrow-right text-xs"></i></a>
+            </div>
+          </article>
+
+          <article class="group relative flex min-h-[420px] overflow-hidden rounded-2xl">
+            <img src="img/service-6.jpg" alt="Supply and Installation" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10 transition group-hover:from-brand-dark group-hover:via-brand-dark/80"></div>
+            <div class="relative mt-auto p-7 text-white">
+              <img src="img/icons/icon-10.png" alt="" class="mb-4 h-11 w-11">
+              <h3 class="font-display text-2xl font-bold">Supply &amp; installation</h3>
+              <p class="mt-2 text-neutral-200">Choose a complete solution with quality materials supplied and professionally installed to help bring your project to completion.</p>
+              <a href="service.html" class="mt-4 inline-flex items-center gap-2 font-semibold hover:underline">Read more <i class="fa fa-arrow-right text-xs"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us -->
+    <section class="py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
+        <div>
+          <p class="mb-3 font-semibold text-brand">Why choose us</p>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-black sm:text-5xl">Quality materials, professional service and reliable installation</h2>
+          <p class="mt-6 max-w-prose leading-relaxed">We are committed to providing customers with durable products, professional workmanship and dependable service. From the initial consultation to the completed installation, we focus on delivering solutions that meet the customer's needs.</p>
+          <div class="mt-8 space-y-6">
+            <div class="flex gap-5">
+              <img src="img/icons/icon-2.png" alt="" class="h-14 w-14 shrink-0">
+              <div><h3 class="font-display text-xl font-bold text-black">Quality workmanship</h3><p class="mt-1">We pay attention to detail and focus on strong, durable and neatly finished installations.</p></div>
+            </div>
+            <div class="flex gap-5">
+              <img src="img/icons/icon-3.png" alt="" class="h-14 w-14 shrink-0">
+              <div><h3 class="font-display text-xl font-bold text-black">Custom solutions</h3><p class="mt-1">Our carports, patio roofs and steelwork solutions can be adapted to suit different properties, spaces and customer requirements.</p></div>
+            </div>
+            <div class="flex gap-5">
+              <img src="img/icons/icon-4.png" alt="" class="h-14 w-14 shrink-0">
+              <div><h3 class="font-display text-xl font-bold text-black">Professional installation</h3><p class="mt-1">We provide a convenient end-to-end service, including supply and installation, helping customers complete their projects efficiently.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <img src="img/about-2.jpg" alt="Steelwork Project" class="aspect-[3/4] w-full rounded-2xl object-cover">
+          <img src="img/about-1.jpg" alt="Carport Installation" class="mt-12 aspect-[3/4] w-full rounded-2xl object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="bg-neutral-100 py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-14 max-w-2xl">
+          <p class="mb-3 font-semibold text-brand">Our projects</p>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-black sm:text-5xl">View our latest carport, patio roof and palisade projects</h2>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-3">
+          <div role="tablist" aria-label="Projects" class="flex flex-row gap-3 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
+            <button role="tab" aria-selected="true" aria-controls="proj-1" class="tab-btn shrink-0 rounded-xl border border-neutral-300 bg-white px-6 py-5 text-left font-display text-lg font-bold text-black transition hover:border-black lg:shrink">Custom carport<span class="tab-bar mt-3 block h-0.5 w-0 bg-transparent transition-all duration-500"></span></button>
+            <button role="tab" aria-selected="false" aria-controls="proj-2" class="tab-btn shrink-0 rounded-xl border border-neutral-300 bg-white px-6 py-5 text-left font-display text-lg font-bold text-black transition hover:border-black lg:shrink">Patio roof<span class="tab-bar mt-3 block h-0.5 w-0 bg-transparent transition-all duration-500"></span></button>
+            <button role="tab" aria-selected="false" aria-controls="proj-3" class="tab-btn shrink-0 rounded-xl border border-neutral-300 bg-white px-6 py-5 text-left font-display text-lg font-bold text-black transition hover:border-black lg:shrink">Palisade fencing<span class="tab-bar mt-3 block h-0.5 w-0 bg-transparent transition-all duration-500"></span></button>
+            <button role="tab" aria-selected="false" aria-controls="proj-4" class="tab-btn shrink-0 rounded-xl border border-neutral-300 bg-white px-6 py-5 text-left font-display text-lg font-bold text-black transition hover:border-black lg:shrink">Custom steelwork<span class="tab-bar mt-3 block h-0.5 w-0 bg-transparent transition-all duration-500"></span></button>
+          </div>
+
+          <div class="lg:col-span-2">
+            <div id="proj-1" role="tabpanel" class="grid items-center gap-8 md:grid-cols-2">
+              <img src="img/project-1.jpg" alt="Custom Carport Installation" class="aspect-[4/5] w-full rounded-2xl object-cover">
+              <div>
+                <h3 class="font-display text-3xl font-extrabold text-black">Custom carport installation</h3>
+                <p class="mt-4 leading-relaxed">A professionally installed carport designed to provide reliable protection for vehicles while complementing the existing property.</p>
+                <ul class="mt-5 space-y-2 font-medium text-black">
+                  <li><i class="fa fa-check mr-3 text-brand"></i>Quality materials</li><li><i class="fa fa-check mr-3 text-brand"></i>Custom design</li><li><i class="fa fa-check mr-3 text-brand"></i>Professional installation</li>
+                </ul>
+                <a href="project.html" class="mt-7 inline-block rounded-full bg-black px-7 py-3 font-semibold text-white transition hover:bg-brand">View project</a>
+              </div>
+            </div>
+            <div id="proj-2" role="tabpanel" hidden class="grid items-center gap-8 md:grid-cols-2">
+              <img src="img/project-2.jpg" alt="Patio Roof Installation" class="aspect-[4/5] w-full rounded-2xl object-cover">
+              <div>
+                <h3 class="font-display text-3xl font-extrabold text-black">Patio roof installation</h3>
+                <p class="mt-4 leading-relaxed">A practical and attractive patio roof designed to create a comfortable outdoor entertainment and relaxation area.</p>
+                <ul class="mt-5 space-y-2 font-medium text-black">
+                  <li><i class="fa fa-check mr-3 text-brand"></i>Custom shade solution</li><li><i class="fa fa-check mr-3 text-brand"></i>Durable construction</li><li><i class="fa fa-check mr-3 text-brand"></i>Professional installation</li>
+                </ul>
+                <a href="project.html" class="mt-7 inline-block rounded-full bg-black px-7 py-3 font-semibold text-white transition hover:bg-brand">View project</a>
+              </div>
+            </div>
+            <div id="proj-3" role="tabpanel" hidden class="grid items-center gap-8 md:grid-cols-2">
+              <img src="img/project-3.jpg" alt="Palisade Fencing Project" class="aspect-[4/5] w-full rounded-2xl object-cover">
+              <div>
+                <h3 class="font-display text-3xl font-extrabold text-black">Palisade fencing project</h3>
+                <p class="mt-4 leading-relaxed">A durable palisade fencing installation designed to improve property security while maintaining a clean and professional appearance.</p>
+                <ul class="mt-5 space-y-2 font-medium text-black">
+                  <li><i class="fa fa-check mr-3 text-brand"></i>Strong steel construction</li><li><i class="fa fa-check mr-3 text-brand"></i>Security focused</li><li><i class="fa fa-check mr-3 text-brand"></i>Neat installation</li>
+                </ul>
+                <a href="project.html" class="mt-7 inline-block rounded-full bg-black px-7 py-3 font-semibold text-white transition hover:bg-brand">View project</a>
+              </div>
+            </div>
+            <div id="proj-4" role="tabpanel" hidden class="grid items-center gap-8 md:grid-cols-2">
+              <img src="img/project-4.jpg" alt="Custom Steelwork Project" class="aspect-[4/5] w-full rounded-2xl object-cover">
+              <div>
+                <h3 class="font-display text-3xl font-extrabold text-black">Custom steelwork project</h3>
+                <p class="mt-4 leading-relaxed">A custom steelwork solution designed and installed according to the property's specific requirements, with a focus on durability and quality finishing.</p>
+                <ul class="mt-5 space-y-2 font-medium text-black">
+                  <li><i class="fa fa-check mr-3 text-brand"></i>Custom requirements</li><li><i class="fa fa-check mr-3 text-brand"></i>Quality steelwork</li><li><i class="fa fa-check mr-3 text-brand"></i>Complete installation</li>
+                </ul>
+                <a href="project.html" class="mt-7 inline-block rounded-full bg-black px-7 py-3 font-semibold text-white transition hover:bg-brand">View project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <p class="mb-3 font-semibold text-brand">Our team</p>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-black sm:text-5xl">A dedicated team delivering quality steelwork solutions</h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="group overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+            <div class="relative overflow-hidden">
+              <img src="img/team-1.jpg" alt="Business Owner" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-105">
+              <div class="absolute inset-x-0 bottom-0 flex translate-y-full justify-center gap-2 bg-gradient-to-t from-black/80 to-transparent p-4 transition group-hover:translate-y-0">
+                <a href="#" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="p-5"><h3 class="font-display text-xl font-bold text-black">Business Owner</h3><p class="text-sm text-brand">Management &amp; Customer Service</p></div>
+          </article>
+          <article class="group overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+            <div class="relative overflow-hidden">
+              <img src="img/team-2.jpg" alt="Steelwork Specialist" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-105">
+              <div class="absolute inset-x-0 bottom-0 flex translate-y-full justify-center gap-2 bg-gradient-to-t from-black/80 to-transparent p-4 transition group-hover:translate-y-0">
+                <a href="#" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="p-5"><h3 class="font-display text-xl font-bold text-black">Steelwork Specialist</h3><p class="text-sm text-brand">Steelwork &amp; Fabrication</p></div>
+          </article>
+          <article class="group overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+            <div class="relative overflow-hidden">
+              <img src="img/team-3.jpg" alt="Installation Team Leader" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-105">
+              <div class="absolute inset-x-0 bottom-0 flex translate-y-full justify-center gap-2 bg-gradient-to-t from-black/80 to-transparent p-4 transition group-hover:translate-y-0">
+                <a href="#" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="p-5"><h3 class="font-display text-xl font-bold text-black">Installation Team Leader</h3><p class="text-sm text-brand">Project Installation</p></div>
+          </article>
+          <article class="group overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+            <div class="relative overflow-hidden">
+              <img src="img/team-4.jpg" alt="Installation Technician" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-105">
+              <div class="absolute inset-x-0 bottom-0 flex translate-y-full justify-center gap-2 bg-gradient-to-t from-black/80 to-transparent p-4 transition group-hover:translate-y-0">
+                <a href="#" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram" class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="p-5"><h3 class="font-display text-xl font-bold text-black">Installation Technician</h3><p class="text-sm text-brand">Installation &amp; Finishing</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="blueprint bg-black py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2">
+        <div class="text-neutral-300">
+          <p class="mb-3 font-semibold text-brand">Get a free quote</p>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">Request a quote for your carport, patio roof or palisade project</h2>
+          <p class="mt-6 max-w-prose leading-relaxed">Tell us about your project and the type of structure you need. Whether you require a carport, patio roof, palisade fencing or another steelwork solution, our team can discuss your requirements and provide a suitable quotation.</p>
+          <div class="mt-8 space-y-5">
+            <a href="tel:+27000000000" class="flex items-center gap-5">
+              <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-brand text-white"><i class="fa fa-phone-alt text-lg"></i></span>
+              <span><span class="block text-sm text-neutral-400">Call us</span><span class="font-display text-xl font-bold text-white">+27 XX XXX XXXX</span></span>
+            </a>
+            <a href="mailto:info@yourbusiness.co.za" class="flex items-center gap-5">
+              <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-brand text-white"><i class="fa fa-envelope-open text-lg"></i></span>
+              <span class="min-w-0"><span class="block text-sm text-neutral-400">Email us</span><span class="break-words font-display text-xl font-bold text-white">info@yourbusiness.co.za</span></span>
+            </a>
+          </div>
+        </div>
+
+        <form class="grid gap-4 rounded-3xl bg-white p-8 sm:grid-cols-2 sm:p-10">
+          <div><label for="q-name" class="mb-2 block text-sm font-medium text-black">Your name</label><input id="q-name" type="text" placeholder="Full name" class="w-full rounded-xl border border-neutral-300 px-4 py-3.5 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30"></div>
+          <div><label for="q-email" class="mb-2 block text-sm font-medium text-black">Your email</label><input id="q-email" type="email" placeholder="you@example.com" class="w-full rounded-xl border border-neutral-300 px-4 py-3.5 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30"></div>
+          <div><label for="q-mobile" class="mb-2 block text-sm font-medium text-black">Your mobile</label><input id="q-mobile" type="tel" placeholder="+27 XX XXX XXXX" class="w-full rounded-xl border border-neutral-300 px-4 py-3.5 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30"></div>
+          <div>
+            <label for="q-service" class="mb-2 block text-sm font-medium text-black">Service</label>
+            <select id="q-service" class="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3.5 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30">
+              <option value="" selected>Choose service</option>
+              <option>Carport</option><option>Patio Roof</option><option>Palisade Fencing</option><option>Steelwork Installation</option><option>Custom Shade Structure</option><option>Supply &amp; Installation</option>
+            </select>
+          </div>
+          <div><label for="q-date" class="mb-2 block text-sm font-medium text-black">Preferred date</label><input id="q-date" type="date" class="w-full rounded-xl border border-neutral-300 px-4 py-3.5 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30"></div>
+          <div><label for="q-time" class="mb-2 block text-sm font-medium text-black">Preferred time</label><input id="q-time" type="time" class="w-full rounded-xl border border-neutral-300 px-4 py-3.5 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30"></div>
+          <div class="sm:col-span-2"><label for="q-msg" class="mb-2 block text-sm font-medium text-black">Your project</label><textarea id="q-msg" rows="4" placeholder="Tell us about your project, preferred structure and requirements" class="w-full resize-y rounded-xl border border-neutral-300 px-4 py-3.5 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30"></textarea></div>
+          <div class="sm:col-span-2"><button type="submit" class="w-full rounded-full bg-brand py-4 font-semibold text-white transition hover:bg-black">Request a quote</button></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 lg:py-28">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="mb-12 text-center">
+          <p class="mb-3 font-semibold text-brand">Customer reviews</p>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-black sm:text-5xl">What our customers say about our work</h2>
+        </div>
+
+        <div id="reviews" class="relative" aria-roledescription="carousel" aria-label="Customer reviews">
+          <div class="review text-center">
+            <i class="fa fa-quote-left mb-6 text-3xl text-brand"></i>
+            <p class="text-xl leading-relaxed text-neutral-800 sm:text-2xl">Our team focuses on delivering quality workmanship, reliable service and practical steelwork solutions for every project.</p>
+            <h3 class="mt-8 font-display text-xl font-bold text-black">Customer Feedback</h3>
+            <p class="text-brand">Carport customer</p>
+          </div>
+          <div class="review hidden text-center">
+            <i class="fa fa-quote-left mb-6 text-3xl text-brand"></i>
+            <p class="text-xl leading-relaxed text-neutral-800 sm:text-2xl">We aim to make every project straightforward, from discussing the customer's requirements through to supplying and installing the finished structure.</p>
+            <h3 class="mt-8 font-display text-xl font-bold text-black">Customer Feedback</h3>
+            <p class="text-brand">Patio roof customer</p>
+          </div>
+          <div class="review hidden text-center">
+            <i class="fa fa-quote-left mb-6 text-3xl text-brand"></i>
+            <p class="text-xl leading-relaxed text-neutral-800 sm:text-2xl">Our steelwork solutions are designed with durability, functionality and the appearance of the property in mind.</p>
+            <h3 class="mt-8 font-display text-xl font-bold text-black">Customer Feedback</h3>
+            <p class="text-brand">Palisade fencing customer</p>
+          </div>
+
+          <div class="mt-10 flex items-center justify-center gap-4">
+            <button id="revPrev" aria-label="Previous review" class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 text-black transition hover:border-brand hover:bg-brand hover:text-white"><i class="fa fa-arrow-left"></i></button>
+            <div id="revDots" class="flex gap-2"></div>
+            <button id="revNext" aria-label="Next review" class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 text-black transition hover:border-brand hover:bg-brand hover:text-white"><i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-neutral-400">
+    <div class="mx-auto grid max-w-7xl gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <h3 class="mb-5 font-display text-lg font-bold text-white">Contact us</h3>
+        <p class="mb-3 flex gap-3"><i class="fa fa-map-marker-alt mt-1 text-brand"></i>Your Business Address, South Africa</p>
+        <p class="mb-3 flex gap-3"><i class="fa fa-phone-alt mt-1 text-brand"></i>+27 XX XXX XXXX</p>
+        <p class="mb-5 flex gap-3"><i class="fa fa-envelope mt-1 text-brand"></i>info@yourbusiness.co.za</p>
+        <div class="flex gap-2">
+          <a href="#" aria-label="Twitter" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 transition hover:border-brand hover:bg-brand hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 transition hover:border-brand hover:bg-brand hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 transition hover:border-brand hover:bg-brand hover:text-white"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 transition hover:border-brand hover:bg-brand hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-5 font-display text-lg font-bold text-white">Our services</h3>
+        <ul class="space-y-3">
+          <li><a href="service.html" class="transition hover:text-brand">Carports</a></li>
+          <li><a href="service.html" class="transition hover:text-brand">Patio Roofs</a></li>
+          <li><a href="service.html" class="transition hover:text-brand">Palisade Fencing</a></li>
+          <li><a href="service.html" class="transition hover:text-brand">Steelwork Installations</a></li>
+          <li><a href="service.html" class="transition hover:text-brand">Custom Shade Structures</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-5 font-display text-lg font-bold text-white">Quick links</h3>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="transition hover:text-brand">About Us</a></li>
+          <li><a href="contact.html" class="transition hover:text-brand">Contact Us</a></li>
+          <li><a href="service.html" class="transition hover:text-brand">Our Services</a></li>
+          <li><a href="project.html" class="transition hover:text-brand">Our Projects</a></li>
+          <li><a href="appointment.html" class="transition hover:text-brand">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-5 font-display text-lg font-bold text-white">Newsletter</h3>
+        <p class="mb-5">Stay updated with our latest carport, patio roof, palisade and steelwork projects.</p>
+        <form class="flex rounded-full border border-neutral-700 p-1.5 focus-within:border-brand" onsubmit="return false">
+          <label for="footerEmail" class="sr-only">Your email</label>
+          <input id="footerEmail" type="email" placeholder="Your email" class="w-full bg-transparent px-4 text-white placeholder-neutral-500 outline-none">
+          <button class="rounded-full bg-brand px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark">Sign up</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-neutral-800">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-sm sm:flex-row">
+        <p>&copy; <a href="#" class="text-white hover:text-brand">SteelShade Solutions</a>. All rights reserved.</p>
+        <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+        <p class="text-center sm:text-right">Designed by <a href="https://htmlcodex.com" class="text-white hover:text-brand">HTML Codex</a> &middot; Distributed by <a href="https://themewagon.com" target="_blank" rel="noopener" class="text-white hover:text-brand">ThemeWagon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="toTop" aria-label="Back to top" class="invisible fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white opacity-0 shadow-lg transition hover:bg-black">
+    <i class="fa fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open);
+    });
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    addEventListener('scroll', () => {
+      const show = scrollY > 400;
+      toTop.classList.toggle('invisible', !show);
+      toTop.classList.toggle('opacity-0', !show);
+    });
+
+    // Generic dot builder
+    function dots(container, count, onPick) {
+      for (let i = 0; i < count; i++) {
+        const b = document.createElement('button');
+        b.setAttribute('aria-label', 'Go to item ' + (i + 1));
+        b.addEventListener('click', () => onPick(i));
+        container.appendChild(b);
+      }
+    }
+    function paint(container, active, on, off) {
+      [...container.children].forEach((b, i) => { b.className = 'h-2.5 rounded-full transition-all ' + (i === active ? on : off); });
+    }
+
+    // Hero slider
+    (function () {
+      const slides = [...document.querySelectorAll('#hero .slide')];
+      const wrap = document.getElementById('heroDots');
+      let i = 0, timer;
+      const on = 'w-10 bg-brand', off = 'w-2.5 bg-white/50 hover:bg-white';
+      function show(n) {
+        i = (n + slides.length) % slides.length;
+        slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+        paint(wrap, i, on, off);
+      }
+      function play() {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        clearInterval(timer); timer = setInterval(() => show(i + 1), 6500);
+      }
+      dots(wrap, slides.length, n => { show(n); play(); });
+      document.getElementById('heroPrev').onclick = () => { show(i - 1); play(); };
+      document.getElementById('heroNext').onclick = () => { show(i + 1); play(); };
+      show(0); play();
+    })();
+
+    // Project tabs
+    (function () {
+      const tabs = [...document.querySelectorAll('.tab-btn')];
+      tabs.forEach(t => t.addEventListener('click', () => {
+        tabs.forEach(o => {
+          const sel = o === t;
+          o.setAttribute('aria-selected', sel);
+          document.getElementById(o.getAttribute('aria-controls')).hidden = !sel;
+        });
+      }));
+    })();
+
+    // Reviews slider
+    (function () {
+      const items = [...document.querySelectorAll('#reviews .review')];
+      const wrap = document.getElementById('revDots');
+      let i = 0;
+      const on = 'w-8 bg-brand', off = 'w-2.5 bg-neutral-300 hover:bg-neutral-400';
+      function show(n) {
+        i = (n + items.length) % items.length;
+        items.forEach((s, k) => s.classList.toggle('hidden', k !== i));
+        paint(wrap, i, on, off);
+      }
+      dots(wrap, items.length, show);
+      document.getElementById('revPrev').onclick = () => show(i - 1);
+      document.getElementById('revNext').onclick = () => show(i + 1);
+      show(0);
+    })();
+  </script>
+</body>
+</html>

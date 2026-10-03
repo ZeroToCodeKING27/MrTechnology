@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MR Technology | Gates, Automation & Motor Solutions</title>
+  <meta name="description" content="MR Technology provides custom gates, automation systems and motor installations for homes and businesses.">
+  <link rel="icon" href="img/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
+          },
+          colors: {
+            ink: '#07090d',
+            blue: {
+              400: '#38bdf8',
+              500: '#1688ff',
+              600: '#0875e1',
+              700: '#075bb5'
+            }
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(7, 9, 13, .08)',
+            blue: '0 18px 45px rgba(22, 136, 255, .25)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.font-display { font-family: 'Space Grotesk', sans-serif; }
+    .hero-slide { transition: opacity .8s ease, transform 6.5s ease; }
+    .hero-slide.active { opacity: 1; transform: scale(1.02); z-index: 2; }
+    .hero-slide:not(.active) { opacity: 0; pointer-events: none; z-index: 1; }
+    .hero-overlay { background: linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.58) 48%, rgba(0,0,0,.18) 100%); }
+    .glass { background: rgba(255,255,255,.78); backdrop-filter: blur(18px); }
+    .section-kicker::before { content:''; display:inline-block; width:32px; height:2px; margin-right:10px; vertical-align:middle; background:#1688ff; }
+    .service-card:hover img { transform: scale(1.06); }
+    .service-card:hover { transform: translateY(-8px); }
+    .service-card { transition: transform .35s ease, box-shadow .35s ease; }
+    .service-card img { transition: transform .6s ease; }
+    .team-card img { transition: transform .5s ease; }
+    .team-card:hover img { transform: scale(1.04); }
+    .contact-card, .reason-item { transition: all .3s ease; }
+    .contact-card:hover { transform: translateY(-4px); border-color:#1688ff; box-shadow:0 18px 50px rgba(7,9,13,.08); }
+    .contact-card:hover .arrow { transform: translate(3px,-3px); }
+    .arrow { transition: transform .3s ease; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; left:0; bottom:-8px; width:0; height:2px; background:#1688ff; transition:width .25s ease; }
+    .nav-link:hover::after, .nav-link.active::after { width:100%; }
+    #mobile-menu { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+    #mobile-menu.open { max-height:420px; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    #loader { transition: opacity .35s ease, visibility .35s ease; }
+    #loader.hide { opacity:0; visibility:hidden; }
+  </style>
+</head>
+
+<body class="bg-white text-slate-900 antialiased">
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white">
+    <div class="flex items-center gap-2">
+      <span class="h-3 w-3 rounded-full bg-blue-500 animate-bounce [animation-delay:-.2s]"></span>
+      <span class="h-3 w-3 rounded-full bg-blue-500 animate-bounce [animation-delay:-.1s]"></span>
+      <span class="h-3 w-3 rounded-full bg-blue-500 animate-bounce"></span>
+    </div>
+  </div>
+
+  <!-- Top bar -->
+  <div class="hidden bg-ink text-white lg:block">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-xs xl:px-8">
+      <div class="flex flex-wrap items-center gap-6 text-slate-300">
+        <a class="transition hover:text-white" href="tel:+0119541433"><i class="fa-solid fa-phone mr-2 text-blue-400"></i>011-954-1433</a>
+        <a class="transition hover:text-white" href="tel:+0119544475"><i class="fa-solid fa-phone mr-2 text-blue-400"></i>011-954-4475</a>
+        <a class="transition hover:text-white" href="tel:+0676270310"><i class="fa-brands fa-whatsapp mr-2 text-blue-400"></i>067-627-0310</a>
+        <a class="transition hover:text-white" href="mailto:admin@mrtechnology1.co.za"><i class="fa-regular fa-envelope mr-2 text-blue-400"></i>admin@mrtechnology1.co.za</a>
+      </div>
+      <div class="flex gap-3 text-slate-400">
+        <a class="hover:text-white" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="hover:text-white" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a class="hover:text-white" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header id="header" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-shadow">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 xl:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-ink text-white shadow-lg"><i class="fa-solid fa-shield-halved text-blue-400"></i></span>
+        <span class="font-display text-xl font-bold tracking-tight"><span class="text-blue-600">MR</span> Technology</span>
+      </a>
+
+      <div class="hidden items-center gap-8 lg:flex">
+        <a class="nav-link active text-sm font-semibold text-slate-900" href="index.html">Home</a>
+        <a class="nav-link text-sm font-semibold text-slate-600 hover:text-slate-900" href="about.html">About</a>
+        <a class="nav-link text-sm font-semibold text-slate-600 hover:text-slate-900" href="service.html">Services</a>
+        <a class="nav-link text-sm font-semibold text-slate-600 hover:text-slate-900" href="project.html">Projects</a>
+        <a class="nav-link text-sm font-semibold text-slate-600 hover:text-slate-900" href="contact.html">Contact</a>
+        <a href="appointment.html" class="rounded-full bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-blue transition hover:-translate-y-0.5 hover:bg-blue-700">Book a Consultation <i class="fa-solid fa-arrow-right ml-2"></i></a>
+      </div>
+
+      <button id="menu-button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-slate-900 lg:hidden" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="border-t border-slate-200 bg-white lg:hidden">
+      <div class="mx-auto max-w-7xl space-y-1 px-6 py-4">
+        <a class="block rounded-xl bg-slate-50 px-4 py-3 font-semibold" href="index.html">Home</a>
+        <a class="block rounded-xl px-4 py-3 font-semibold text-slate-600 hover:bg-slate-50" href="about.html">About</a>
+        <a class="block rounded-xl px-4 py-3 font-semibold text-slate-600 hover:bg-slate-50" href="service.html">Services</a>
+        <a class="block rounded-xl px-4 py-3 font-semibold text-slate-600 hover:bg-slate-50" href="project.html">Projects</a>
+        <a class="block rounded-xl px-4 py-3 font-semibold text-slate-600 hover:bg-slate-50" href="contact.html">Contact</a>
+        <a class="mt-2 block rounded-xl bg-blue-600 px-4 py-3 text-center font-bold text-white" href="appointment.html">Book a Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative min-h-[680px] overflow-hidden bg-ink sm:min-h-[740px]">
+      <div class="absolute inset-0">
+        <article class="hero-slide active absolute inset-0 bg-cover bg-center" style="background-image:url('img/ChatGPT\ Image\ Oct\ 1\,\ 2026\,\ 09_27_50\ PM.png')">
+          <div class="hero-overlay absolute inset-0"></div>
+          <div class="relative mx-auto flex h-full max-w-7xl items-center px-6 py-24 xl:px-8">
+            <div class="max-w-3xl text-white">
+              <div class="mb-6 flex items-center gap-3 text-xs font-bold tracking-[.22em] text-blue-300"><span class="h-px w-9 bg-blue-400"></span>SMART SECURITY • AUTOMATION • DESIGN</div>
+              <h1 class="font-display text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-8xl">Secure your property.<br><span class="text-blue-400">Automate your access.</span></h1>
+              <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">Custom gates, automation systems and motor installations built around the way you live and work.</p>
+              <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a href="service.html" class="rounded-full bg-blue-600 px-7 py-4 text-center font-bold text-white shadow-blue transition hover:bg-blue-700">Explore Services <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                <a href="contact.html" class="rounded-full border border-white/30 bg-white/10 px-7 py-4 text-center font-bold text-white backdrop-blur transition hover:bg-white hover:text-ink">Talk to Us</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hero-slide absolute inset-0 bg-cover bg-center" style="background-image:url('img/1Y1A1722-1536x1024.jpg')">
+          <div class="hero-overlay absolute inset-0"></div>
+          <div class="relative mx-auto flex h-full max-w-7xl items-center px-6 py-24 xl:px-8">
+            <div class="max-w-3xl text-white">
+              <div class="mb-6 flex items-center gap-3 text-xs font-bold tracking-[.22em] text-blue-300"><span class="h-px w-9 bg-blue-400"></span>RELIABLE AUTOMATION</div>
+              <h2 class="font-display text-5xl font-bold leading-[1.02] sm:text-6xl lg:text-8xl">Control your entrance<br><span class="text-blue-400">with confidence.</span></h2>
+              <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">Professional automation solutions that bring convenience, safety and dependable performance together.</p>
+              <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a href="project.html" class="rounded-full bg-blue-600 px-7 py-4 text-center font-bold text-white shadow-blue hover:bg-blue-700">View Projects <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                <a href="contact.html" class="rounded-full border border-white/30 bg-white/10 px-7 py-4 text-center font-bold text-white backdrop-blur hover:bg-white hover:text-ink">Get in Touch</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hero-slide absolute inset-0 bg-cover bg-center" style="background-image:url('img/A-blackened-steel-and-timber-combo-gate-pairs-warm-horizontal-wood-panels-with-a-rugged-steel-frame-offering-a-sophisticated-yet-sturdy-entrance.jpg')">
+          <div class="hero-overlay absolute inset-0"></div>
+          <div class="relative mx-auto flex h-full max-w-7xl items-center px-6 py-24 xl:px-8">
+            <div class="max-w-3xl text-white">
+              <div class="mb-6 flex items-center gap-3 text-xs font-bold tracking-[.22em] text-blue-300"><span class="h-px w-9 bg-blue-400"></span>BUILT FOR THE LONG TERM</div>
+              <h2 class="font-display text-5xl font-bold leading-[1.02] sm:text-6xl lg:text-8xl">Quality installation.<br><span class="text-blue-400">Professional results.</span></h2>
+              <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">Every project is approached with precision, durable components and attention to the details that matter.</p>
+              <div class="mt-9"><a href="contact.html" class="inline-block rounded-full bg-blue-600 px-7 py-4 font-bold text-white shadow-blue hover:bg-blue-700">Start a Project <i class="fa-solid fa-arrow-right ml-2"></i></a></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+        <button class="hero-dot h-2 w-10 rounded-full bg-white transition" data-slide="0" aria-label="Slide 1"></button>
+        <button class="hero-dot h-2 w-3 rounded-full bg-white/40 transition" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero-dot h-2 w-3 rounded-full bg-white/40 transition" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="absolute bottom-8 right-6 z-10 hidden items-center gap-3 text-xs font-bold tracking-widest text-white/70 lg:flex"><span class="h-px w-12 bg-white/40"></span>SCROLL TO EXPLORE</div>
+    </section>
+
+    <!-- Intro -->
+    <section class="reveal border-b border-slate-200 bg-white py-20 sm:py-28">
+      <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-end xl:px-8">
+        <div><div class="section-kicker text-xs font-bold tracking-[.18em] text-blue-600">MR TECHNOLOGY</div><h2 class="mt-5 max-w-2xl font-display text-4xl font-bold leading-tight sm:text-5xl">Technology that makes your property <span class="text-blue-600">safer and smarter.</span></h2></div>
+        <div class="lg:pl-10"><p class="text-lg leading-8 text-slate-600">We design and install practical access solutions for homes and businesses — from custom gates to automated systems and gate motors.</p><a href="about.html" class="mt-6 inline-flex items-center font-bold text-ink hover:text-blue-600">Discover our approach <i class="fa-solid fa-arrow-right ml-3 text-blue-600"></i></a></div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="bg-slate-50 py-8 sm:py-12">
+      <div class="mx-auto grid max-w-7xl divide-y divide-slate-200 px-6 md:grid-cols-3 md:divide-x md:divide-y-0 xl:px-8">
+        <div class="reveal p-6 md:pr-10"><span class="text-sm font-bold text-blue-600">01</span><h3 class="mt-4 font-display text-2xl font-bold">Custom Gate Design</h3><p class="mt-2 leading-7 text-slate-600">Strong, stylish gates tailored to your property and security needs.</p></div>
+        <div class="reveal p-6 md:px-10"><span class="text-sm font-bold text-blue-600">02</span><h3 class="mt-4 font-display text-2xl font-bold">Automation Excellence</h3><p class="mt-2 leading-7 text-slate-600">Seamless access control designed for everyday convenience.</p></div>
+        <div class="reveal p-6 md:pl-10"><span class="text-sm font-bold text-blue-600">03</span><h3 class="mt-4 font-display text-2xl font-bold">Motor Installations</h3><p class="mt-2 leading-7 text-slate-600">Reliable motors installed for smooth and lasting operation.</p></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="reveal py-20 sm:py-28">
+      <div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:items-center xl:px-8">
+        <div class="relative min-h-[500px]">
+          <img src="img/1Y1A1722-1536x1024.jpg" alt="MR Technology gate installation" class="absolute left-0 top-0 h-[430px] w-[78%] rounded-[2rem] object-cover shadow-soft">
+          <img src="img/automatic-gate-motor.jpeg" alt="MR Technology automation project" class="absolute bottom-0 right-0 h-64 w-[52%] rounded-[2rem] border-8 border-white object-cover shadow-soft">
+          <div class="absolute bottom-20 left-6 rounded-2xl bg-blue-600 p-5 text-white shadow-blue"><strong class="font-display text-5xl">15</strong><span class="ml-2 inline-block text-sm font-semibold leading-5">Years of<br>experience</span></div>
+        </div>
+        <div>
+          <div class="section-kicker text-xs font-bold tracking-[.18em] text-blue-600">ABOUT US</div>
+          <h2 class="mt-5 font-display text-4xl font-bold leading-tight sm:text-5xl">Built on <span class="text-blue-600">quality, precision</span> and trust.</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-600">MR Technology is dedicated to delivering secure, reliable and stylish solutions for homes and businesses. We specialize in custom gate designs, automation systems and motor installations that reflect our commitment to quality and precision.</p>
+          <p class="mt-4 leading-7 text-slate-600">Every project is tailored to the unique needs of our clients, with a focus on durability, functionality and professional service from consultation through installation.</p>
+          <div class="mt-7 space-y-3 text-sm font-semibold"><div><i class="fa-solid fa-circle-check mr-3 text-blue-600"></i>Tailored solutions for every property</div><div><i class="fa-solid fa-circle-check mr-3 text-blue-600"></i>Quality-focused installation</div><div><i class="fa-solid fa-circle-check mr-3 text-blue-600"></i>Professional support</div></div>
+          <a href="about.html" class="mt-9 inline-flex items-center rounded-full bg-ink px-7 py-4 font-bold text-white transition hover:bg-blue-600">More About Us <i class="fa-solid fa-arrow-right ml-3"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="reveal bg-slate-50 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6 xl:px-8">
+        <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"><div><div class="section-kicker text-xs font-bold tracking-[.18em] text-blue-600">WHAT WE DO</div><h2 class="mt-5 max-w-3xl font-display text-4xl font-bold leading-tight sm:text-5xl">Solutions designed around <span class="text-blue-600">your property.</span></h2></div><a href="service.html" class="font-bold text-ink hover:text-blue-600">View all services <i class="fa-solid fa-arrow-right ml-3 text-blue-600"></i></a></div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+          <article class="service-card overflow-hidden rounded-[1.75rem] bg-white shadow-soft"><div class="relative h-64 overflow-hidden"><img src="img/Intercom-on-gate.jpg" alt="Custom gates" class="h-full w-full object-cover"><span class="absolute right-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-bold">01</span></div><div class="p-7"><div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-blue-600"><i class="fa-solid fa-door-closed"></i></div><h3 class="font-display text-2xl font-bold">Custom Gates</h3><p class="mt-3 leading-7 text-slate-600">Gate solutions that combine strength, style and dependable security for residential and commercial properties.</p><a href="service.html" class="mt-6 inline-flex items-center font-bold">Explore service <i class="fa-solid fa-arrow-right ml-3 text-blue-600"></i></a></div></article>
+          <article class="service-card overflow-hidden rounded-[1.75rem] bg-ink text-white shadow-soft"><div class="relative h-64 overflow-hidden"><img src="img/maxresdefault.jpg" alt="Automation systems" class="h-full w-full object-cover"><span class="absolute right-5 top-5 rounded-full bg-blue-600 px-4 py-2 text-xs font-bold">02</span></div><div class="p-7"><div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-blue-500/15 text-blue-400"><i class="fa-solid fa-wifi"></i></div><h3 class="font-display text-2xl font-bold">Automation Systems</h3><p class="mt-3 leading-7 text-slate-300">Smart access solutions that make entering and securing your property easier and more convenient.</p><a href="service.html" class="mt-6 inline-flex items-center font-bold">Explore service <i class="fa-solid fa-arrow-right ml-3 text-blue-400"></i></a></div></article>
+          <article class="service-card overflow-hidden rounded-[1.75rem] bg-white shadow-soft"><div class="relative h-64 overflow-hidden"><img src="img/A-gate-of-varying-horizontal-slats-and-recessed-lighting-blurs-the-line-between-sculpture-and-structure-adding-rhythm-and-warmth-to-a-minimalist-design.jpg" alt="Motor installations" class="h-full w-full object-cover"><span class="absolute right-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-bold">03</span></div><div class="p-7"><div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-blue-600"><i class="fa-solid fa-gears"></i></div><h3 class="font-display text-2xl font-bold">Motor Installations</h3><p class="mt-3 leading-7 text-slate-600">Durable and efficient gate motors installed for smooth operation and long-lasting performance.</p><a href="service.html" class="mt-6 inline-flex items-center font-bold">Explore service <i class="fa-solid fa-arrow-right ml-3 text-blue-600"></i></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us -->
+    <section class="reveal py-20 sm:py-28">
+      <div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:items-center xl:px-8">
+        <div><div class="section-kicker text-xs font-bold tracking-[.18em] text-blue-600">WHY MR TECHNOLOGY</div><h2 class="mt-5 font-display text-4xl font-bold leading-tight sm:text-5xl">Professional service from <span class="text-blue-600">start to finish.</span></h2><p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">We focus on practical solutions, quality components and workmanship that stands up to everyday use.</p>
+          <div class="mt-9 space-y-3">
+            <div class="reason-item flex gap-5 rounded-2xl border border-slate-200 p-5"><span class="font-display text-lg font-bold text-blue-600">01</span><div><h3 class="font-display text-xl font-bold">Custom Designs</h3><p class="mt-1 leading-6 text-slate-600">Every system is selected and configured around your property's requirements.</p></div></div>
+            <div class="reason-item flex gap-5 rounded-2xl border border-slate-200 p-5"><span class="font-display text-lg font-bold text-blue-600">02</span><div><h3 class="font-display text-xl font-bold">Reliable Solutions</h3><p class="mt-1 leading-6 text-slate-600">Quality materials and motors help deliver dependable long-term performance.</p></div></div>
+            <div class="reason-item flex gap-5 rounded-2xl border border-slate-200 p-5"><span class="font-display text-lg font-bold text-blue-600">03</span><div><h3 class="font-display text-xl font-bold">Professional Service</h3><p class="mt-1 leading-6 text-slate-600">Clear communication and attention to detail throughout the project.</p></div></div>
+          </div>
+        </div>
+        <div class="relative"><img src="img/mighty-mule-wireless-keypad-mmk200-437899_1440x1440.webp" alt="Automation installation" class="h-[600px] w-full rounded-[2rem] object-cover shadow-soft"><div class="absolute bottom-7 left-7 rounded-2xl bg-white p-6 shadow-soft"><strong class="font-display text-4xl">15+</strong><span class="ml-2 inline-block text-sm font-semibold leading-5">Years of<br>industry experience</span></div></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="px-6 py-10 sm:py-16 xl:px-8">
+      <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-ink px-7 py-12 text-white shadow-soft sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between lg:gap-12"><div><div class="text-xs font-bold tracking-[.18em] text-blue-400">LET'S GET STARTED</div><h2 class="mt-4 max-w-3xl font-display text-4xl font-bold sm:text-5xl">Ready to upgrade your property's access?</h2><p class="mt-4 max-w-2xl text-lg leading-7 text-slate-300">Tell us what you need and let's find the right solution for your home or business.</p></div><a href="appointment.html" class="mt-8 inline-flex shrink-0 items-center justify-center rounded-full bg-blue-600 px-7 py-4 font-bold text-white shadow-blue hover:bg-blue-700 lg:mt-0">Book a Consultation <i class="fa-solid fa-arrow-right ml-3"></i></a></div>
+    </section>
+
+    <!-- Contact -->
+    <section class="reveal py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6 xl:px-8"><div><div class="section-kicker text-xs font-bold tracking-[.18em] text-blue-600">GET IN TOUCH</div><h2 class="mt-5 font-display text-4xl font-bold sm:text-5xl">Let's talk about <span class="text-blue-600">your project.</span></h2></div>
+        <div class="mt-10 grid gap-4 lg:grid-cols-3">
+          <a href="tel:+0119541433" class="contact-card flex items-center gap-5 rounded-2xl border border-slate-200 bg-white p-6"><span class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-blue-50 text-blue-600"><i class="fa-solid fa-phone"></i></span><div class="min-w-0"><small class="block text-xs font-bold tracking-widest text-slate-400">CALL US</small><strong class="mt-1 block text-lg">011-954-1433</strong><strong class="block text-lg">011-954-4475</strong></div><i class="arrow fa-solid fa-arrow-up-right-from-square ml-auto text-slate-400"></i></a>
+          <a href="mailto:admin@mrtechnology1.co.za" class="contact-card flex items-center gap-5 rounded-2xl border border-slate-200 bg-white p-6"><span class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-blue-50 text-blue-600"><i class="fa-regular fa-envelope"></i></span><div class="min-w-0"><small class="block text-xs font-bold tracking-widest text-slate-400">EMAIL US</small><strong class="mt-1 block break-all text-lg">admin@mrtechnology1.co.za</strong></div><i class="arrow fa-solid fa-arrow-up-right-from-square ml-auto text-slate-400"></i></a>
+          <a href="tel:+0676270310" class="contact-card flex items-center gap-5 rounded-2xl border border-slate-200 bg-white p-6"><span class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-blue-50 text-blue-600"><i class="fa-brands fa-whatsapp"></i></span><div><small class="block text-xs font-bold tracking-widest text-slate-400">WHATSAPP</small><strong class="mt-1 block text-lg">067-627-0310</strong></div><i class="arrow fa-solid fa-arrow-up-right-from-square ml-auto text-slate-400"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="reveal bg-slate-50 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6 xl:px-8"><div class="text-center"><div class="section-kicker inline-block text-xs font-bold tracking-[.18em] text-blue-600">CLIENT FEEDBACK</div><h2 class="mt-5 font-display text-4xl font-bold sm:text-5xl">What our clients <span class="text-blue-600">say.</span></h2></div>
+        <div class="mt-12 grid gap-5 lg:grid-cols-3">
+          <article class="rounded-[1.75rem] bg-white p-8 shadow-soft"><div class="font-display text-6xl leading-none text-blue-600">“</div><p class="mt-2 text-lg leading-8 text-slate-600">MR Technology installed our automated gate flawlessly. The team was professional, and the quality exceeded our expectations.</p><div class="mt-7 border-t border-slate-200 pt-5"><strong class="block font-display">Mr. Naidoo</strong><span class="text-sm font-semibold text-blue-600">Homeowner</span></div></article>
+          <article class="rounded-[1.75rem] bg-ink p-8 text-white shadow-soft"><div class="font-display text-6xl leading-none text-blue-400">“</div><p class="mt-2 text-lg leading-8 text-slate-300">Their motor installation service was quick and reliable. I highly recommend them for anyone needing automation solutions.</p><div class="mt-7 border-t border-white/10 pt-5"><strong class="block font-display">Ms. Dube</strong><span class="text-sm font-semibold text-blue-400">Business Owner</span></div></article>
+          <article class="rounded-[1.75rem] bg-white p-8 shadow-soft"><div class="font-display text-6xl leading-none text-blue-600">“</div><p class="mt-2 text-lg leading-8 text-slate-600">Excellent customer service and durable products. MR Technology truly delivers on their promise of quality and dedication.</p><div class="mt-7 border-t border-slate-200 pt-5"><strong class="block font-display">Mr. Khumalo</strong><span class="text-sm font-semibold text-blue-600">Property Manager</span></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink text-white">
+    <div class="mx-auto max-w-7xl px-6 py-14 xl:px-8">
+      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div><a href="index.html" class="flex items-center gap-3"><span class="grid h-11 w-11 place-items-center rounded-xl bg-white text-ink"><i class="fa-solid fa-shield-halved text-blue-600"></i></span><span class="font-display text-xl font-bold"><span class="text-blue-400">MR</span> Technology</span></a><p class="mt-5 max-w-sm leading-7 text-slate-400">Custom gates, automation and motor installations for homes and businesses.</p><div class="mt-6 flex gap-3"><a href="#" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-blue-600 hover:text-white"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-blue-600 hover:text-white"><i class="fa-brands fa-instagram"></i></a><a href="#" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-blue-600 hover:text-white"><i class="fa-brands fa-linkedin-in"></i></a></div></div>
+        <div><h4 class="font-display text-lg font-bold">Explore</h4><div class="mt-5 grid gap-3 text-slate-400"><a href="about.html" class="hover:text-white">About Us</a><a href="service.html" class="hover:text-white">Services</a><a href="project.html" class="hover:text-white">Projects</a><a href="contact.html" class="hover:text-white">Contact</a></div></div>
+        <div><h4 class="font-display text-lg font-bold">Contact</h4><div class="mt-5 grid gap-3 text-slate-400"><a href="tel:+0119541433" class="hover:text-white">011-954-1433</a><a href="tel:+0119544475" class="hover:text-white">011-954-4475</a><a href="tel:+0676270310" class="hover:text-white">067-627-0310</a><a href="mailto:admin@mrtechnology1.co.za" class="break-all hover:text-white">admin@mrtechnology1.co.za</a></div></div>
+      </div>
+      <div class="mt-12 flex flex-col gap-3 border-t border-white/10 pt-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 MR Technology. All rights reserved.</span><span>Built for quality. Designed for confidence.</span></div>
+    </div>
+  </footer>
+
+  <a href="#" id="back-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 grid h-12 w-12 translate-y-20 place-items-center rounded-full bg-blue-600 text-white opacity-0 shadow-blue transition-all hover:bg-blue-700"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <script>
+    // Mobile navigation
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', open);
+      menuButton.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    // Hero slider
+    const slides = [...document.querySelectorAll('.hero-slide')];
+    const dots = [...document.querySelectorAll('.hero-dot')];
+    let currentSlide = 0;
+    let sliderTimer;
+
+    function showSlide(index) {
+      currentSlide = index;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('w-10', i === index);
+        dot.classList.toggle('w-3', i !== index);
+        dot.classList.toggle('bg-white', i === index);
+        dot.classList.toggle('bg-white/40', i !== index);
+      });
+    }
+
+    function startSlider() {
+      clearInterval(sliderTimer);
+      sliderTimer = setInterval(() => showSlide((currentSlide + 1) % slides.length), 6500);
+    }
+
+    dots.forEach(dot => dot.addEventListener('click', () => {
+      showSlide(Number(dot.dataset.slide));
+      startSlider();
+    }));
+    startSlider();
+
+    // Scroll effects
+    const header = document.getElementById('header');
+    const backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 30;
+      header.classList.toggle('shadow-lg', scrolled);
+      backTop.classList.toggle('opacity-0', window.scrollY < 500);
+      backTop.classList.toggle('translate-y-20', window.scrollY < 500);
+    });
+
+    backTop.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    // Reveal animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Loader
+    window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hide'), 350));
+  </script>
+</body>
+</html>
