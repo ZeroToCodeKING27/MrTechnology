@@ -4,59 +4,45 @@
   <meta charset="utf-8">
   <title>About Us | MR Technology</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MR Technology — custom gates, automation systems and motor installations in Gauteng, South Africa.">
+  <meta name="description" content="MR Technology is a family-run security and automation company established in 1996, serving Gauteng, Pretoria and North West.">
   <link rel="icon" href="img/favicon.ico">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- Tailwind Play CDN (fine for testing; for production build Tailwind with its CLI) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: { brand: { DEFAULT: '#1f5eff', dark: '#1646c7', soft: '#eaf0ff' } },
-          fontFamily: {
-            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
-            sans: ['"DM Sans"', 'system-ui', 'sans-serif']
-          }
+      theme: { extend: {
+        colors: { brand: { DEFAULT: '#b30000', dark: '#8f0000', soft: '#fef2f2', light: '#f87171' }, ink: '#1f2024' },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          sans: ['"DM Sans"', 'system-ui', 'sans-serif']
         }
-      }
+      } }
     }
   </script>
   <style>
-    .blueprint {
-      background-image:
-        linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
-      background-size: 48px 48px;
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      .rise { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
-      .rise-2 { animation-delay: .12s; }
-      .rise-3 { animation-delay: .24s; }
-    }
-    @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    .blueprint{background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px}
+    @media (prefers-reduced-motion:no-preference){.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}.rise-2{animation-delay:.12s}.rise-3{animation-delay:.24s}}
+    @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
   </style>
 </head>
 
 <body class="bg-white font-sans text-neutral-700 antialiased">
 
   <!-- Topbar -->
-  <div class="bg-black text-xs text-neutral-300 sm:text-sm">
+  <div class="bg-brand text-xs text-white sm:text-sm">
     <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-6 py-2.5">
       <div class="flex flex-wrap items-center gap-x-6 gap-y-1">
-        <a href="tel:+27119541433" class="flex items-center gap-2 transition hover:text-white"><i class="fa-solid fa-phone text-brand"></i>011-954-1433</a>
-        <a href="tel:+27119544475" class="flex items-center gap-2 transition hover:text-white"><i class="fa-solid fa-phone text-brand"></i>011-954-4475</a>
-        <a href="https://wa.me/27676270310" class="flex items-center gap-2 transition hover:text-white"><i class="fa-brands fa-whatsapp text-brand"></i>067-627-0310</a>
-        <a href="mailto:admin@mrtechnology1.co.za" class="hidden items-center gap-2 transition hover:text-white md:flex"><i class="fa-solid fa-envelope text-brand"></i>admin@mrtechnology1.co.za</a>
+        <a href="tel:+27119541433" class="flex items-center gap-2 hover:underline"><i class="fa-solid fa-phone"></i>011 954 1433</a>
+        <a href="tel:+27119544475" class="flex items-center gap-2 hover:underline"><i class="fa-solid fa-phone"></i>011 954 4475</a>
+        <a href="https://wa.me/27676270310" class="flex items-center gap-2 hover:underline"><i class="fa-brands fa-whatsapp"></i>067 627 0310</a>
+        <a href="mailto:admin@mrtechnology1.co.za" class="hidden items-center gap-2 hover:underline md:flex"><i class="fa-solid fa-envelope"></i>admin@mrtechnology1.co.za</a>
       </div>
       <div class="hidden items-center gap-5 md:flex">
-        <a href="#" class="hover:text-white">Terms</a>
-        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:underline">Terms</a>
+        <a href="#" class="hover:underline">Privacy</a>
       </div>
     </div>
   </div>
@@ -64,25 +50,19 @@
   <!-- Navbar -->
   <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="index.html" class="flex items-center gap-3 font-display text-xl font-extrabold tracking-tight text-black">
-        <span class="grid h-10 w-10 place-items-center rounded-xl bg-black text-base text-white">MR</span>
+      <a href="index.html" class="flex items-center gap-3 font-display text-xl font-extrabold tracking-tight text-ink">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand text-base text-white">MR</span>
         MR <span class="text-brand">Technology</span>
       </a>
-
       <div class="hidden items-center gap-8 text-[15px] font-medium text-neutral-600 lg:flex">
-        <a href="index.html" class="transition hover:text-black">Home</a>
-        <a href="about.html" class="border-b-2 border-brand pb-1 text-black">About</a>
-        <a href="service.html" class="transition hover:text-black">Services</a>
-        <a href="contact.html" class="transition hover:text-black">Contact</a>
+        <a href="index.html" class="transition hover:text-ink">Home</a>
+        <a href="about.html" class="border-b-2 border-brand pb-1 text-ink">About</a>
+        <a href="service.html" class="transition hover:text-ink">Services</a>
+        <a href="contact.html" class="transition hover:text-ink">Contact</a>
       </div>
-
-      <a href="appointment.html" class="hidden rounded-full bg-black px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand lg:block">Book a consultation</a>
-
-      <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 text-black lg:hidden">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <a href="appointment.html" class="hidden rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark lg:block">Book a consultation</a>
+      <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 text-ink lg:hidden"><i class="fa-solid fa-bars"></i></button>
     </nav>
-
     <div id="mobileMenu" class="hidden border-t border-neutral-200 bg-white px-6 pb-6 lg:hidden">
       <div class="flex flex-col py-2 font-medium text-neutral-700">
         <a href="index.html" class="border-b border-neutral-100 py-3">Home</a>
@@ -96,26 +76,25 @@
 
   <main>
     <!-- Hero -->
-    <section class="blueprint relative overflow-hidden bg-black">
-      <div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand/30 blur-3xl"></div>
+    <section class="blueprint relative overflow-hidden bg-ink">
+      <div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand/40 blur-3xl"></div>
       <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-2 lg:py-28">
         <div>
-          <h1 class="rise font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">Built on quality, precision and trust.</h1>
-          <p class="rise rise-2 mt-6 max-w-xl text-lg leading-relaxed text-neutral-300">Custom gates, automation and motor installations designed to make your property safer, smarter and easier to access.</p>
+          <h1 class="rise font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">A family business. Your safety first.</h1>
+          <p class="rise rise-2 mt-6 max-w-xl text-lg leading-relaxed text-neutral-300">Established in 1996, MR Technology maintains professionalism and quality of work and keeps clients happy at all times.</p>
           <div class="rise rise-3 mt-9 flex flex-wrap gap-3">
-            <a href="service.html" class="rounded-full bg-brand px-8 py-3.5 font-semibold text-white transition hover:bg-white hover:text-black">Explore services</a>
-            <a href="contact.html" class="rounded-full border border-white/40 px-8 py-3.5 font-semibold text-white transition hover:bg-white hover:text-black">Contact us</a>
+            <a href="service.html" class="rounded-full bg-brand px-8 py-3.5 font-semibold text-white transition hover:bg-white hover:text-brand">Explore services</a>
+            <a href="contact.html" class="rounded-full border border-white/40 px-8 py-3.5 font-semibold text-white transition hover:bg-white hover:text-brand">Contact us</a>
           </div>
         </div>
-
         <div class="rise rise-2 relative pb-6 pl-6">
           <div class="absolute bottom-0 left-0 z-10 rounded-xl bg-brand px-5 py-4 text-white shadow-xl">
-            <p class="font-display text-4xl font-extrabold leading-none">15+</p>
-            <p class="mt-1 text-sm text-blue-100">Years industry experience</p>
+            <p class="font-display text-4xl font-extrabold leading-none">30</p>
+            <p class="mt-1 text-sm text-red-100">Years in business</p>
           </div>
           <div class="grid grid-cols-5 gap-4">
-            <img src="img/automatic-gate-motor.jpeg" alt="MR Technology gate installation" class="col-span-3 h-72 w-full rounded-2xl object-cover sm:h-96">
-            <img src="img/A-blackened-steel-and-timber-combo-gate-pairs-warm-horizontal-wood-panels-with-a-rugged-steel-frame-offering-a-sophisticated-yet-sturdy-entrance.jpg" alt="MR Technology project" class="col-span-2 mt-12 h-60 w-full rounded-2xl object-cover sm:h-80">
+            <img src="img/automatic-gate-motor.jpeg" alt="MR Technology gate motor installation" class="col-span-3 h-72 w-full rounded-2xl object-cover sm:h-96">
+            <img src="img/A-blackened-steel-and-timber-combo-gate-pairs-warm-horizontal-wood-panels-with-a-rugged-steel-frame-offering-a-sophisticated-yet-sturdy-entrance.jpg" alt="MR Technology gate project" class="col-span-2 mt-12 h-60 w-full rounded-2xl object-cover sm:h-80">
           </div>
         </div>
       </div>
@@ -127,108 +106,119 @@
       <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-5 lg:items-center">
         <div class="lg:col-span-2">
           <p class="mb-3 font-semibold text-brand">Who we are</p>
-          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-black sm:text-5xl">Technology that works around your property</h2>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">Understanding your needs, since 1996</h2>
         </div>
         <div class="space-y-5 text-lg leading-relaxed lg:col-span-3">
-          <p>MR Technology is committed to delivering secure, reliable, and stylish solutions for homes and businesses. We specialize in custom gate designs, automation systems, and motor installations that showcase our dedication to quality and precision.</p>
-          <p>Every project reflects our promise of durability, functionality, and customer satisfaction. Our team ensures that each installation is tailored to meet the unique needs of our clients.</p>
+          <p>MR Technology is a family-run business based in the Western suburbs of Johannesburg. We offer our services all over Gauteng, including Pretoria and North West.</p>
+          <p>We pride ourselves on understanding our clients' needs — to them, safety and security come first. We always strive to be fair towards our clients and our employees, and to keep communication between ourselves, our clients and our employees open and honest.</p>
         </div>
       </div>
     </section>
 
     <!-- Why choose us -->
-    <section class="bg-black py-20 lg:py-28">
+    <section class="bg-ink py-20 lg:py-28">
       <div class="mx-auto max-w-7xl px-6">
         <div class="mb-14 max-w-2xl">
-          <p class="mb-3 font-semibold text-brand">Why choose us</p>
-          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">Trusted quality and dedication in every job</h2>
-          <p class="mt-6 leading-relaxed text-neutral-300">At MR Technology, we pride ourselves on delivering solutions that are secure, reliable, and tailored to client needs. Our dedication ensures every project reflects excellence.</p>
+          <p class="mb-3 font-semibold text-brand-light">Why choose us</p>
+          <h2 class="font-display text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">We have proven ourselves time and time again</h2>
+          <p class="mt-6 leading-relaxed text-neutral-300">We have worked with insurance companies (for the past 17 years), home owners, construction companies and commercial business owners. You can ask us for references.</p>
         </div>
-
         <div class="grid gap-6 md:grid-cols-3">
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900 p-8 transition hover:border-brand">
+          <article class="rounded-2xl border border-neutral-700 bg-neutral-800 p-8 transition hover:border-brand">
             <span class="grid h-14 w-14 place-items-center rounded-xl bg-brand-soft"><img src="img/icons/icon-2.png" alt="" class="h-8 w-8 object-contain"></span>
-            <h3 class="mt-6 font-display text-2xl font-bold text-white">Custom designs</h3>
-            <p class="mt-3 leading-relaxed text-neutral-300">Every gate and automation system is uniquely crafted to suit your property's requirements.</p>
+            <h3 class="mt-6 font-display text-2xl font-bold text-white">Experience</h3>
+            <p class="mt-3 leading-relaxed text-neutral-300">Established in 1996, we continue to grow and adapt with the market, staying at the leading edge of security products, designs and solutions.</p>
           </article>
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900 p-8 transition hover:border-brand">
+          <article class="rounded-2xl border border-neutral-700 bg-neutral-800 p-8 transition hover:border-brand">
             <span class="grid h-14 w-14 place-items-center rounded-xl bg-brand-soft"><img src="img/icons/icon-3.png" alt="" class="h-8 w-8 object-contain"></span>
-            <h3 class="mt-6 font-display text-2xl font-bold text-white">Reliable solutions</h3>
-            <p class="mt-3 leading-relaxed text-neutral-300">We use high-quality materials and motors to ensure durability and performance.</p>
+            <h3 class="mt-6 font-display text-2xl font-bold text-white">Beneficial consultancy</h3>
+            <p class="mt-3 leading-relaxed text-neutral-300">Our experienced management gives objective, impartial and cost effective advice, with recommendations suited to you, your business and your budget.</p>
           </article>
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900 p-8 transition hover:border-brand">
+          <article class="rounded-2xl border border-neutral-700 bg-neutral-800 p-8 transition hover:border-brand">
             <span class="grid h-14 w-14 place-items-center rounded-xl bg-brand-soft"><img src="img/icons/icon-4.png" alt="" class="h-8 w-8 object-contain"></span>
-            <h3 class="mt-6 font-display text-2xl font-bold text-white">Professional service</h3>
-            <p class="mt-3 leading-relaxed text-neutral-300">Our team is committed to excellence, from consultation to installation and after-sales support.</p>
+            <h3 class="mt-6 font-display text-2xl font-bold text-white">Technical support</h3>
+            <p class="mt-3 leading-relaxed text-neutral-300">We manage our own technical department. Our highly trained technicians undergo constant training to keep up with the latest technology.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Our staff + Mission -->
+    <section class="py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2">
+        <div class="rounded-3xl bg-brand-soft p-10">
+          <p class="mb-3 font-semibold text-brand">Our staff</p>
+          <h2 class="font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">Qualified, screened and permanently employed</h2>
+          <ul class="mt-6 space-y-3 leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-circle-check mt-1.5 text-brand"></i>Fully qualified and trained by our credible suppliers.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-circle-check mt-1.5 text-brand"></i>All staff are screened before being employed.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-circle-check mt-1.5 text-brand"></i>No sub-contractors are used — all staff are permanent.</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-neutral-200 p-10">
+          <p class="mb-3 font-semibold text-brand">Mission statement</p>
+          <h2 class="font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">We'll go the extra mile</h2>
+          <p class="mt-6 leading-relaxed">We are committed to providing exceptional services by delivering personalised, high quality and cost efficient solutions to meet the needs of our clients.</p>
+          <p class="mt-4 leading-relaxed">We strive to exceed the requests of our clients by going above and beyond what is asked, to ensure that every detail is to your requirements.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- CTA -->
     <section class="px-6 pb-20 lg:pb-28">
       <div class="blueprint mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 overflow-hidden rounded-3xl bg-brand p-10 text-white md:flex-row md:items-center lg:p-14">
         <div class="max-w-xl">
-          <h2 class="font-display text-3xl font-extrabold leading-tight sm:text-4xl">Ready to upgrade your property's access?</h2>
-          <p class="mt-3 text-blue-100">Talk to MR Technology about your next gate, automation or motor installation project.</p>
+          <h2 class="font-display text-3xl font-extrabold leading-tight sm:text-4xl">Ready to secure your property?</h2>
+          <p class="mt-3 text-red-100">Talk to MR Technology about your security, access control or automation project.</p>
         </div>
-        <a href="appointment.html" class="shrink-0 rounded-full bg-white px-8 py-3.5 font-semibold text-black transition hover:bg-black hover:text-white">Book a consultation</a>
+        <a href="appointment.html" class="shrink-0 rounded-full bg-white px-8 py-3.5 font-semibold text-brand transition hover:bg-ink hover:text-white">Book a consultation</a>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-black text-neutral-400">
+  <footer class="bg-ink text-neutral-400">
     <div class="mx-auto grid max-w-7xl gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
       <div>
-        <a href="index.html" class="flex items-center gap-3 font-display text-xl font-extrabold text-white">
-          <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand text-base">MR</span> MR Technology
-        </a>
-        <p class="mt-5 leading-relaxed">Secure, reliable and stylish gate, automation and motor solutions for homes and businesses.</p>
+        <a href="index.html" class="flex items-center gap-3 font-display text-xl font-extrabold text-white"><span class="grid h-10 w-10 place-items-center rounded-xl bg-brand text-base">MR</span> MR Technology</a>
+        <p class="mt-5 leading-relaxed">Family-run security and automation specialists since 1996. We'll go the extra mile.</p>
       </div>
-
       <div>
-        <h3 class="mb-5 font-display text-lg font-bold text-white">Address</h3>
-        <p class="mb-3 flex gap-3"><i class="fa-solid fa-location-dot mt-1 text-brand"></i>Brakpan, Gauteng, South Africa</p>
-        <p class="mb-3 flex gap-3"><i class="fa-solid fa-phone mt-1 text-brand"></i>011-954-1433 / 011-954-4475</p>
-        <p class="flex gap-3"><i class="fa-solid fa-envelope mt-1 text-brand"></i><span class="break-all">admin@mrtechnology1.co.za</span></p>
+        <h3 class="mb-5 font-display text-lg font-bold text-white">Contact</h3>
+        <p class="mb-3 flex gap-3"><i class="fa-solid fa-location-dot mt-1 text-brand-light"></i>Western suburbs of Johannesburg, serving Gauteng, Pretoria &amp; North West</p>
+        <p class="mb-3 flex gap-3"><i class="fa-solid fa-phone mt-1 text-brand-light"></i>011 954 1433 / 011 954 4475</p>
+        <p class="mb-3 flex gap-3"><i class="fa-brands fa-whatsapp mt-1 text-brand-light"></i>067 627 0310</p>
+        <p class="flex gap-3"><i class="fa-solid fa-envelope mt-1 text-brand-light"></i><span class="break-all">admin@mrtechnology1.co.za</span></p>
       </div>
-
       <div>
         <h3 class="mb-5 font-display text-lg font-bold text-white">Services</h3>
         <ul class="space-y-3">
-          <li><a href="service.html" class="transition hover:text-brand">Custom Gates</a></li>
-          <li><a href="service.html" class="transition hover:text-brand">Automation Systems</a></li>
-          <li><a href="service.html" class="transition hover:text-brand">Motor Installations</a></li>
-          <li><a href="service.html" class="transition hover:text-brand">Security Solutions</a></li>
-          <li><a href="service.html" class="transition hover:text-brand">Maintenance &amp; Support</a></li>
+          <li><a href="service.html" class="transition hover:text-brand-light">Access Control &amp; CCTV</a></li>
+          <li><a href="service.html" class="transition hover:text-brand-light">Garage &amp; Gate Motors</a></li>
+          <li><a href="service.html" class="transition hover:text-brand-light">Gate Manufacturing &amp; Steel Work</a></li>
+          <li><a href="service.html" class="transition hover:text-brand-light">Alarms, Intercoms &amp; Electric Fence</a></li>
+          <li><a href="service.html" class="transition hover:text-brand-light">Solar, Battery Backups &amp; Aircons</a></li>
         </ul>
       </div>
-
       <div>
         <h3 class="mb-5 font-display text-lg font-bold text-white">Quick links</h3>
         <ul class="space-y-3">
-          <li><a href="about.html" class="transition hover:text-brand">About Us</a></li>
-          <li><a href="contact.html" class="transition hover:text-brand">Contact Us</a></li>
-          <li><a href="service.html" class="transition hover:text-brand">Our Services</a></li>
-          <li><a href="#" class="transition hover:text-brand">Terms &amp; Conditions</a></li>
-          <li><a href="#" class="transition hover:text-brand">Support</a></li>
+          <li><a href="about.html" class="transition hover:text-brand-light">About Us</a></li>
+          <li><a href="contact.html" class="transition hover:text-brand-light">Contact Us</a></li>
+          <li><a href="service.html" class="transition hover:text-brand-light">Our Services</a></li>
+          <li><a href="http://www.mrtechnology.co.za" class="transition hover:text-brand-light">www.mrtechnology.co.za</a></li>
         </ul>
       </div>
     </div>
-
-    <div class="border-t border-neutral-800">
+    <div class="border-t border-neutral-700">
       <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-sm sm:flex-row">
-        <p>&copy; MR Technology. All rights reserved.</p>
-        <p>Designed for a modern digital experience.</p>
+        <p>&copy; 2026 MR Technology. All rights reserved.</p>
+        <p>Established 1996.</p>
       </div>
     </div>
   </footer>
 
-  <a href="#" id="toTop" aria-label="Back to top" class="invisible fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white opacity-0 shadow-lg transition hover:bg-black">
-    <i class="fa-solid fa-arrow-up"></i>
-  </a>
+  <a href="#" id="toTop" aria-label="Back to top" class="invisible fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white opacity-0 shadow-lg transition hover:bg-brand-dark"><i class="fa-solid fa-arrow-up"></i></a>
 
   <script>
     const btn = document.getElementById('menuBtn');
@@ -237,7 +227,6 @@
       const open = menu.classList.toggle('hidden') === false;
       btn.setAttribute('aria-expanded', open);
     });
-
     const toTop = document.getElementById('toTop');
     addEventListener('scroll', () => {
       const show = scrollY > 400;
