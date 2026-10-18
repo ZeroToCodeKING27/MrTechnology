@@ -42,11 +42,18 @@
     .reveal.visible{opacity:1;transform:none}
     #loader{transition:opacity .35s ease,visibility .35s ease}
     #loader.hide{opacity:0;visibility:hidden}
+    /* Logo */
+    .site-logo{display:block;width:auto;object-fit:contain}
+    .hero-logo-badge{animation:logoFloat 6s ease-in-out infinite}
+    @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @media (prefers-reduced-motion:reduce){.hero-logo-badge{animation:none}}
   </style>
 </head>
 
 <body class="bg-white text-slate-900 antialiased">
-  <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white">
+  <!-- Loader (now shows the logo) -->
+  <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-6 bg-white">
+    <img src="img/WhatsApp%20Image%202026-10-18%20at%2022.34.07.jpeg" alt="MR Technology logo" class="site-logo h-28 animate-pulse sm:h-36">
     <div class="flex items-center gap-2">
       <span class="h-3 w-3 rounded-full bg-brand-600 animate-bounce [animation-delay:-.2s]"></span>
       <span class="h-3 w-3 rounded-full bg-brand-600 animate-bounce [animation-delay:-.1s]"></span>
@@ -72,11 +79,10 @@
   </div>
 
   <!-- Navbar -->
-  <header id="header" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-shadow">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 xl:px-8">
-      <a href="index.html" class="flex items-center gap-3">
-        <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-600 text-white shadow-lg"><i class="fa-solid fa-shield-halved"></i></span>
-        <span class="font-display text-xl font-bold tracking-tight"><span class="text-brand-600">MR</span> Technology</span>
+  <header id="header" class="sticky top-0 z-50 border-b-4 border-brand-600 bg-white transition-shadow">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 xl:px-8">
+      <a href="index.html" class="flex items-center" aria-label="MR Technology home">
+        <img src="img/WhatsApp%20Image%202026-10-18%20at%2022.34.07.jpeg" alt="MR Technology logo" class="site-logo h-16 sm:h-20 lg:h-24">
       </a>
       <div class="hidden items-center gap-8 lg:flex">
         <a class="nav-link active text-sm font-semibold text-slate-900" href="index.html">Home</a>
@@ -145,6 +151,14 @@
           </div>
         </article>
       </div>
+
+      <!-- Persistent hero logo badge (stays visible on every slide) -->
+      <div class="pointer-events-none absolute right-4 top-4 z-10 sm:right-8 sm:top-8 lg:right-12 lg:top-12">
+        <div class="hero-logo-badge rounded-3xl border-4 border-brand-600 bg-white p-3 shadow-brand sm:p-5">
+          <img src="img/WhatsApp%20Image%202026-10-18%20at%2022.34.07.jpeg" alt="MR Technology logo" class="site-logo h-16 sm:h-28 lg:h-44">
+        </div>
+      </div>
+
       <div class="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2">
         <button class="hero-dot h-2 w-10 rounded-full bg-white transition" data-slide="0" aria-label="Slide 1"></button>
         <button class="hero-dot h-2 w-3 rounded-full bg-white/40 transition" data-slide="1" aria-label="Slide 2"></button>
@@ -235,7 +249,9 @@
   <footer class="bg-ink text-white border-t border-white/10">
     <div class="mx-auto max-w-7xl px-6 py-14 xl:px-8">
       <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <div><a href="index.html" class="flex items-center gap-3"><span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-600 text-white"><i class="fa-solid fa-shield-halved"></i></span><span class="font-display text-xl font-bold"><span class="text-brand-400">MR</span> Technology</span></a><p class="mt-5 max-w-sm leading-7 text-slate-400">Family-run security and automation specialists since 1996, serving Gauteng, Pretoria and North West.</p><div class="mt-6 flex gap-3"><a href="#" aria-label="Facebook" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-instagram"></i></a><a href="https://wa.me/270676270310" aria-label="WhatsApp" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+        <div>
+          <a href="index.html" class="inline-block rounded-2xl bg-white p-3 shadow-brand" aria-label="MR Technology home"><img src="img/WhatsApp%20Image%202026-10-18%20at%2022.34.07.jpeg" alt="MR Technology logo" class="site-logo h-20 sm:h-24"></a>
+          <p class="mt-5 max-w-sm leading-7 text-slate-400">Family-run security and automation specialists since 1996, serving Gauteng, Pretoria and North West.</p><div class="mt-6 flex gap-3"><a href="#" aria-label="Facebook" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-instagram"></i></a><a href="https://wa.me/270676270310" aria-label="WhatsApp" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-400 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-whatsapp"></i></a></div></div>
         <div><h4 class="font-display text-lg font-bold">Explore</h4><div class="mt-5 grid gap-3 text-slate-400"><a href="about.html" class="hover:text-white">About Us</a><a href="service.html" class="hover:text-white">Services</a><a href="project.html" class="hover:text-white">Projects</a><a href="contact.html" class="hover:text-white">Contact</a></div></div>
         <div><h4 class="font-display text-lg font-bold">Contact</h4><div class="mt-5 grid gap-3 text-slate-400"><a href="tel:+27119541433" class="hover:text-white">011 954 1433</a><a href="tel:+27119544475" class="hover:text-white">011 954 4475</a><a href="tel:+270676270310" class="hover:text-white">067 627 0310</a><a href="mailto:admin@mrtechnology1.co.za" class="break-all hover:text-white">admin@mrtechnology1.co.za</a><a href="http://www.mrtechnology.co.za" class="hover:text-white">www.mrtechnology.co.za</a></div></div>
       </div>

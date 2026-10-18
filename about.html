@@ -24,6 +24,7 @@
   </script>
   <style>
     .blueprint{background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px}
+    .site-logo{display:block;width:auto;object-fit:contain}
     @media (prefers-reduced-motion:no-preference){.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}.rise-2{animation-delay:.12s}.rise-3{animation-delay:.24s}}
     @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
   </style>
@@ -48,11 +49,10 @@
   </div>
 
   <!-- Navbar -->
-  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="index.html" class="flex items-center gap-3 font-display text-xl font-extrabold tracking-tight text-ink">
-        <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand text-base text-white">MR</span>
-        MR <span class="text-brand">Technology</span>
+  <header class="sticky top-0 z-50 border-b-4 border-brand bg-white">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+      <a href="index.html" class="flex items-center" aria-label="MR Technology home">
+        <img src="img/WhatsApp%20Image%202026-10-18%20at%2022.34.07.jpeg" alt="MR Technology logo" class="site-logo h-16 sm:h-20 lg:h-24">
       </a>
       <div class="hidden items-center gap-8 text-[15px] font-medium text-neutral-600 lg:flex">
         <a href="index.html" class="transition hover:text-ink">Home</a>
@@ -180,7 +180,7 @@
   <footer class="bg-ink text-neutral-400">
     <div class="mx-auto grid max-w-7xl gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
       <div>
-        <a href="index.html" class="flex items-center gap-3 font-display text-xl font-extrabold text-white"><span class="grid h-10 w-10 place-items-center rounded-xl bg-brand text-base">MR</span> MR Technology</a>
+        <a href="index.html" class="inline-block rounded-2xl bg-white p-3 shadow-lg" aria-label="MR Technology home"><img src="img/WhatsApp%20Image%202026-10-18%20at%2022.34.07.jpeg" alt="MR Technology logo" class="site-logo h-20 sm:h-24"></a>
         <p class="mt-5 leading-relaxed">Family-run security and automation specialists since 1996. We'll go the extra mile.</p>
       </div>
       <div>
