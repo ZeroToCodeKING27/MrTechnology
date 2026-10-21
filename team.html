@@ -1,339 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
     <meta charset="utf-8">
-    <title>Arkitektur - Architecture HTML Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See MR Technology's work: gate and garage motor installations, access control, CCTV, steel work and more across Gauteng, Pretoria, North West and surrounding areas.">
+    <title>Gallery | MR Technology (Pty) Ltd</title>
+    <link rel="icon" href="img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: {
+                    ink: '#1f2024',
+                    brand: { 50:'#fef2f2', 100:'#fee2e2', 400:'#f87171', 500:'#d71920', 600:'#b30000', 700:'#8f0000', 900:'#450a0a' }
+                },
+                fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
+                boxShadow: { soft: '0 20px 50px rgba(31,32,36,0.10)' }
+            } }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <style>
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif}
+        .grid-pattern{background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:42px 42px}
+        .site-logo{display:block;width:auto;object-fit:contain}
+        .tile img{transition:transform .6s ease}
+        .tile:hover img{transform:scale(1.06)}
+        .tile .cap{transition:opacity .3s ease,transform .3s ease}
+        @media (hover:hover){.tile .cap{opacity:0;transform:translateY(8px)}.tile:hover .cap,.tile:focus-visible .cap{opacity:1;transform:none}}
+        #lightbox{transition:opacity .25s ease,visibility .25s ease}
+        #lightbox.hidden-lb{opacity:0;visibility:hidden}
+    </style>
 </head>
 
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
-        <img class="position-absolute top-50 start-50 translate-middle" src="img/icons/icon-1.png" alt="Icon">
-    </div>
-    <!-- Spinner End -->
+<body class="bg-white text-slate-900">
 
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark p-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-3">
-                    <a class="text-body px-2" href="tel:+0123456789"><i class="fa fa-phone-alt text-primary me-2"></i>+012 345 6789</a>
-                    <a class="text-body px-2" href="mailto:info@example.com"><i class="fa fa-envelope-open text-primary me-2"></i>info@example.com</a>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-2">
-                    <a class="text-body px-2" href="">Terms</a>
-                    <a class="text-body px-2" href="">Privacy</a>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+<!-- Top contact bar -->
+<div class="hidden bg-brand-600 text-white lg:block">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+        <div class="flex items-center gap-6">
+            <a href="tel:+27119541433" class="hover:underline"><i class="fa-solid fa-phone mr-2"></i>011 954 1433</a>
+            <a href="tel:+27119544475" class="hover:underline"><i class="fa-solid fa-phone mr-2"></i>011 954 4475</a>
+            <a href="https://wa.me/27676270310" class="hover:underline"><i class="fa-brands fa-whatsapp mr-2"></i>067 627 0310</a>
+            <a href="mailto:admin@mrtechnology1.co.za" class="hover:underline"><i class="fa-solid fa-envelope mr-2"></i>admin@mrtechnology1.co.za</a>
+        </div>
+        <div class="flex gap-5">
+            <a href="#" class="hover:underline">Terms</a>
+            <a href="#" class="hover:underline">Privacy</a>
         </div>
     </div>
-    <!-- Topbar End -->
+</div>
 
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="text-primary m-0"><img class="me-3" src="img/icons/icon-1.png" alt="Icon">Arkitektur</h1>
+<!-- Navigation -->
+<header class="sticky top-0 z-50 border-b-4 border-brand-600 bg-white shadow-sm">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <a href="index.html" class="flex items-center gap-3" aria-label="MR Technology home">
+            <img src="img/WhatsApp%20Image%202026-10-18%20at%2022.34.07.jpeg" alt="MR Technology logo" class="site-logo h-16 sm:h-20 lg:h-24"><span class="max-w-[120px] text-[10px] font-semibold uppercase leading-tight tracking-wide text-slate-600 sm:max-w-none sm:text-xs lg:text-sm"><br>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Services</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu border-0 m-0">
-                        <a href="feature.html" class="dropdown-item">Our Features</a>
-                        <a href="project.html" class="dropdown-item">Our Projects</a>
-                        <a href="team.html" class="dropdown-item active">Team Members</a>
-                        <a href="appointment.html" class="dropdown-item">Appointment</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+        <button id="menuButton" type="button" class="rounded-xl border border-slate-200 p-3 text-slate-700 lg:hidden" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
+        <div id="mobileMenu" class="absolute left-0 right-0 top-full hidden border-b border-slate-200 bg-white p-5 shadow-xl lg:static lg:flex lg:w-auto lg:items-center lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
+            <div class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-7">
+                <a href="index.html" class="rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-brand-50 hover:text-brand-600">Home</a>
+                <a href="about.html" class="rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-brand-50 hover:text-brand-600">About</a>
+                <a href="service.html" class="rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-brand-50 hover:text-brand-600">Services</a>
+                <a href="team.html" class="rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-brand-50 hover:text-brand-600">Portfolio</a>
+                <a href="contact.html" class="rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-brand-50 hover:text-brand-600">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Appointment</a>
+            <a href="appointment.html" class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-3 font-semibold text-white shadow-lg shadow-brand-600/20 transition hover:-translate-y-0.5 hover:bg-brand-700 lg:mt-0">Get a Quote <i class="fa-solid fa-arrow-right text-sm"></i></a>
         </div>
     </nav>
-    <!-- Navbar End -->
+</header>
 
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <h1 class="display-1 text-white animated slideInDown">Members</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">Members</li>
-                </ol>
-            </nav>
+<!-- Hero -->
+<section class="relative overflow-hidden bg-ink">
+    <div class="absolute inset-0 grid-pattern opacity-50"></div>
+    <div class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-600/30 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl"></div>
+    <div class="relative mx-auto max-w-7xl px-6 py-20 lg:py-28">
+        <div class="max-w-3xl">
+            <span class="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/10 px-4 py-2 text-sm font-semibold text-brand-400"><span class="h-2 w-2 rounded-full bg-brand-400"></span>Our work</span>
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Our gallery of <span class="text-brand-400">completed work.</span></h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">A look at recent installations and projects by MR Technology, from gates and motors to access control, CCTV and steel work.</p>
         </div>
     </div>
-    <!-- Page Header End -->
+</section>
 
+<!-- Gallery -->
+<section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-10 max-w-2xl">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">Photo gallery</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">Quality you can see</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-600">Click any photo to view it full size.</p>
+        </div>
+        <!--
+         ==============================================================
+          GALLERY IMAGES  -  7 image tags below.
+          For each one: 1) put your photo in the  img/gallery/  folder
+                        2) change  src="img/gallery/photo-1.jpg"  to your file name
+                        3) change alt="" (short description of the photo)
+                        4) change the title and description text under it
+         ==============================================================
+        -->
+        <div id="galleryGrid" class="grid auto-rows-[200px] grid-cols-2 gap-3 sm:auto-rows-[240px] sm:gap-4 lg:grid-cols-4">
 
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h4 class="section-title">Team Members</h4>
-                <h1 class="display-5 mb-4">We Are Creative Architecture Team For Your Dream Home</h1>
-            </div>
-            <div class="row g-0 team-items">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- ===== IMAGE 1 ===== change src, alt and the two lines of text -->
+            <figure class="tile group relative cursor-pointer overflow-hidden rounded-2xl bg-slate-100 shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 col-span-2 lg:row-span-2" tabindex="0" role="button" aria-label="Open image 1">
+                <img src="img/WhatsApp Image 2026-10-18 at 22.34.07.jpeg" alt="Project 1" loading="lazy" class="h-full w-full object-cover">
+                <figcaption class="cap absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 text-white">
+                    <strong class="block">Project 1</strong>
+                    <span class="block text-sm text-slate-200">Describe this project here</span>
+                </figcaption>
+            </figure>
+
+            <!-- ===== IMAGE 2 ===== change src, alt and the two lines of text -->
+            <figure class="tile group relative cursor-pointer overflow-hidden rounded-2xl bg-slate-100 shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 " tabindex="0" role="button" aria-label="Open image 2">
+                <img src="img/WhatsApp Image 2026-10-21 at 13.12.58.jpeg" alt="Project 2" loading="lazy" class="h-full w-full object-cover">
+                <figcaption class="cap absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 text-white">
+                    <strong class="block">Project 2</strong>
+                    <span class="block text-sm text-slate-200">Describe this project here</span>
+                </figcaption>
+            </figure>
+
+            <!-- ===== IMAGE 3 ===== change src, alt and the two lines of text -->
+            <figure class="tile group relative cursor-pointer overflow-hidden rounded-2xl bg-slate-100 shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 " tabindex="0" role="button" aria-label="Open image 3">
+                <img src="img/WhatsApp Image 2026-10-21 at 13.13.32 (1).jpeg" alt="Project 3" loading="lazy" class="h-full w-full object-cover">
+                <figcaption class="cap absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 text-white">
+                    <strong class="block">Project 3</strong>
+                    <span class="block text-sm text-slate-200">Describe this project here</span>
+                </figcaption>
+            </figure>
+
+            <!-- ===== IMAGE 4 ===== change src, alt and the two lines of text -->
+            <figure class="tile group relative cursor-pointer overflow-hidden rounded-2xl bg-slate-100 shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 " tabindex="0" role="button" aria-label="Open image 4">
+                <img src="img/WhatsApp Image 2026-10-21 at 13.14.10 (1).jpeg" alt="Project 4" loading="lazy" class="h-full w-full object-cover">
+                <figcaption class="cap absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 text-white">
+                    <strong class="block">Project 4</strong>
+                    <span class="block text-sm text-slate-200">Describe this project here</span>
+                </figcaption>
+            </figure>
+
+            <!-- ===== IMAGE 5 ===== change src, alt and the two lines of text -->
+            <figure class="tile group relative cursor-pointer overflow-hidden rounded-2xl bg-slate-100 shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 " tabindex="0" role="button" aria-label="Open image 5">
+                <img src="img/WhatsApp Image 2026-10-21 at 13.14.10.jpeg" alt="Project 5" loading="lazy" class="h-full w-full object-cover">
+                <figcaption class="cap absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 text-white">
+                    <strong class="block">Project 5</strong>
+                    <span class="block text-sm text-slate-200">Describe this project here</span>
+                </figcaption>
+            </figure>
+
+            <!-- ===== IMAGE 6 ===== change src, alt and the two lines of text -->
+            <figure class="tile group relative cursor-pointer overflow-hidden rounded-2xl bg-slate-100 shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 lg:col-span-2" tabindex="0" role="button" aria-label="Open image 6">
+                <img src="img/WhatsApp Image 2026-10-21 at 13.14.59 (1).jpeg" alt="Project 6" loading="lazy" class="h-full w-full object-cover">
+                <figcaption class="cap absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 text-white">
+                    <strong class="block">Project 6</strong>
+                    <span class="block text-sm text-slate-200">Describe this project here</span>
+                </figcaption>
+            </figure>
+
+            <!-- ===== IMAGE 7 ===== change src, alt and the two lines of text -->
+            <figure class="tile group relative cursor-pointer overflow-hidden rounded-2xl bg-slate-100 shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 lg:col-span-2" tabindex="0" role="button" aria-label="Open image 7">
+                <img src="img/WhatsApp Image 2026-10-21 at 13.14.59.jpeg" alt="Project 7" loading="lazy" class="h-full w-full object-cover">
+                <figcaption class="cap absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 text-white">
+                    <strong class="block">Project 7</strong>
+                    <span class="block text-sm text-slate-200">Describe this project here</span>
+                </figcaption>
+            </figure>
         </div>
     </div>
-    <!-- Team End -->
-        
+</section>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="text-light mb-4">Address</h3>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-body me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="text-light mb-4">Services</h3>
-                    <a class="btn btn-link" href="">Architecture</a>
-                    <a class="btn btn-link" href="">3D Animation</a>
-                    <a class="btn btn-link" href="">House Planning</a>
-                    <a class="btn btn-link" href="">Interior Design</a>
-                    <a class="btn btn-link" href="">Construction</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="text-light mb-4">Quick Links</h3>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="text-light mb-4">Newsletter</h3>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
+<!-- Video -->
+<section class="bg-ink py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-10 max-w-2xl">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-400">Watch</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">See our team in action</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-300">Watch how MR Technology delivers professional installations from start to finish.</p>
+        </div>
+
+        <!--
+         ==============================================================
+          VIDEO  -  one <video> tag + one cover <img> tag.
+          1) Put your video (.mp4) in the  img/videos/  folder
+          2) Change  src="img/videos/my-video.mp4"  to your video file name
+          3) Put a cover picture in  img/videos/  and change the cover <img> src
+          (Using YouTube instead? Delete the <video> tag and the cover button,
+           then paste your YouTube <iframe> embed code in their place.)
+         ==============================================================
+        -->
+        <div class="relative aspect-video overflow-hidden rounded-3xl border border-white/10 bg-black shadow-2xl">
+
+            <!-- VIDEO TAG -->
+            <video id="siteVideo" class="h-full w-full bg-black" controls playsinline preload="metadata">
+                <source src="img/WhatsApp%20Video%202026-10-21%20at%2013.12.08.mp4" type="video/mp4">
+            </video>
+
+            <!-- VIDEO COVER IMAGE TAG (click to play) -->
+            <button id="videoCover" type="button" class="group absolute inset-0 flex items-center justify-center bg-ink" aria-label="Play video">
+                <img src="img/videos/cover.jpg" alt="MR Technology video cover" class="absolute inset-0 h-full w-full object-cover">
+                <span class="absolute inset-0 bg-black/30 transition group-hover:bg-black/10"></span>
+                <span class="relative grid h-20 w-20 place-items-center rounded-full bg-brand-600 text-3xl text-white shadow-brand transition group-hover:scale-110"><i class="fa-solid fa-play pl-1"></i></span>
+                <span id="videoNote" class="absolute bottom-4 left-4 right-4 hidden text-center text-sm font-semibold text-slate-300"></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:py-20">
+        <div class="relative overflow-hidden rounded-3xl bg-brand-600 px-7 py-12 shadow-2xl sm:px-10 lg:flex lg:items-center lg:justify-between lg:px-14">
+            <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10"></div>
+            <div class="relative max-w-2xl">
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-red-100">We'll go the extra mile</p>
+                <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Want results like these at your property?</h2>
+                <p class="mt-4 leading-7 text-red-100">Tell us what you need and we'll recommend the right solution for you, your business and your budget.</p>
+            </div>
+            <a href="contact.html" class="relative mt-8 inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 font-bold text-brand-600 shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-100 lg:mt-0">Contact Us <i class="fa-solid fa-arrow-right text-sm"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="hidden-lb fixed inset-0 z-[90] flex items-center justify-center bg-black/90 p-4" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button id="lbClose" class="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-white/10 text-xl text-white hover:bg-brand-600" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button id="lbPrev" class="absolute left-3 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white hover:bg-brand-600 sm:left-6" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+    <button id="lbNext" class="absolute right-3 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white hover:bg-brand-600 sm:right-6" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+    <figure class="flex max-h-full max-w-5xl flex-col items-center">
+        <img id="lbImg" src="" alt="" class="max-h-[78vh] w-auto max-w-full rounded-xl object-contain">
+        <figcaption class="mt-4 text-center text-white">
+            <strong id="lbTitle" class="block text-lg"></strong>
+            <span id="lbCaption" class="block text-sm text-slate-300"></span>
+            <span id="lbCount" class="mt-1 block text-xs text-slate-400"></span>
+        </figcaption>
+    </figure>
+</div>
+
+<!-- Footer -->
+<footer class="bg-ink text-slate-400">
+    <div class="mx-auto max-w-7xl px-6 py-14">
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+            <div>
+                <a href="index.html" class="inline-block rounded-2xl bg-white p-3 shadow-lg" aria-label="MR Technology home">
+                    <img src="img/WhatsApp%20Image%202026-10-18%20at%2022.34.07.jpeg" alt="MR Technology logo" class="site-logo h-20 sm:h-24">
+                </a>
+                <p class="mt-3 text-sm font-semibold text-white">by MR Technology (Pty) Ltd</p>
+                <p class="mt-5 leading-7">Family-run security and automation specialists since 1996. We'll go the extra mile.</p>
+                <div class="mt-6 flex gap-3">
+                    <a href="#" aria-label="Facebook" class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 transition hover:border-brand-600 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 transition hover:border-brand-600 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/27676270310" aria-label="WhatsApp" class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 transition hover:border-brand-600 hover:bg-brand-600 hover:text-white"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
+            <div>
+                <h3 class="font-bold text-white">Services</h3>
+                <ul class="mt-5 space-y-3">
+                    <li><a href="service.html" class="hover:text-brand-400">Access Control &amp; CCTV</a></li>
+                    <li><a href="service.html" class="hover:text-brand-400">Garage &amp; Gate Motors</a></li>
+                    <li><a href="service.html" class="hover:text-brand-400">Garage Door Installations &amp; Roller Shutters</a></li>
+                    <li><a href="service.html" class="hover:text-brand-400">Gate Manufacturing &amp; Steel Work</a></li>
+                    <li><a href="service.html" class="hover:text-brand-400">Alarms, Intercoms &amp; Electric Fence (COC)</a></li>
+                    <li><a href="service.html" class="hover:text-brand-400">Solar, Battery Backups &amp; Aircons</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-white">Quick Links</h3>
+                <ul class="mt-5 space-y-3">
+                    <li><a href="about.html" class="hover:text-brand-400">About Us</a></li>
+                    <li><a href="service.html" class="hover:text-brand-400">Our Services</a></li>
+                    <li><a href="gallery.html" class="hover:text-brand-400">Gallery</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-400">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-white">Contact</h3>
+                <ul class="mt-5 space-y-4 text-sm">
+                    <li class="flex gap-3"><i class="fa-solid fa-location-dot mt-1 text-brand-400"></i><span>Western suburbs of Johannesburg<br>Gauteng, Pretoria, North West &amp; surrounding areas</span></li>
+                    <li class="flex gap-3"><i class="fa-solid fa-phone mt-1 text-brand-400"></i><span>011 954 1433<br>011 954 4475</span></li>
+                    <li class="flex gap-3"><i class="fa-brands fa-whatsapp mt-1 text-brand-400"></i><span>067 627 0310</span></li>
+                    <li class="flex gap-3"><i class="fa-solid fa-envelope mt-1 text-brand-400"></i><span class="break-all">admin@mrtechnology1.co.za</span></li>
+                </ul>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
+    <div class="border-t border-white/10">
+        <div class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+            <p>&copy; <span id="year"></span> MR Technology (Pty) Ltd. All rights reserved.</p>
+            <p>Established 1996.</p>
+        </div>
+    </div>
+</footer>
 
+<a id="backToTop" href="#" class="fixed bottom-6 right-6 hidden h-12 w-12 items-center justify-center rounded-xl bg-brand-600 text-white shadow-xl shadow-brand-600/20 transition hover:-translate-y-1 hover:bg-brand-700" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+<script>
+    // ---------- Gallery: placeholders for missing images ----------
+    const tiles = [...document.querySelectorAll('#galleryGrid figure')];
+    tiles.forEach((tile, i) => {
+        const im = tile.querySelector('img');
+        const markBroken = () => {
+            tile.dataset.broken = '1';
+            tile.innerHTML = `<span class="flex h-full w-full flex-col items-center justify-center gap-2 border-2 border-dashed border-slate-300 p-4 text-center text-slate-400"><i class="fa-regular fa-image text-3xl"></i><span class="text-sm font-semibold">Image ${i + 1}</span><span class="break-all text-xs">Add ${im.getAttribute('src')}</span></span>`;
+        };
+        im.addEventListener('error', markBroken);
+        if (im.complete && im.naturalWidth === 0) markBroken();
+        const open = () => { if (!tile.dataset.broken) openLightbox(i); };
+        tile.addEventListener('click', open);
+        tile.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    });
 
+    // ---------- Lightbox (reads straight from the image tags above) ----------
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const srcs = tiles.map(t => ({
+        src: t.querySelector('img')?.src || '',
+        alt: t.querySelector('img')?.alt || '',
+        title: t.querySelector('strong')?.textContent || '',
+        caption: t.querySelector('figcaption span')?.textContent || ''
+    }));
+    let current = 0;
+    function showLightbox(i) {
+        const list = tiles.map((t, k) => k).filter(k => !tiles[k].dataset.broken);
+        const pos = list.indexOf(((i % tiles.length) + tiles.length) % tiles.length);
+        current = list.length ? list[(pos < 0 ? 0 : pos)] : 0;
+        const item = srcs[current];
+        lbImg.src = item.src;
+        lbImg.alt = item.alt;
+        document.getElementById('lbTitle').textContent = item.title;
+        document.getElementById('lbCaption').textContent = item.caption;
+        document.getElementById('lbCount').textContent = `${current + 1} / ${tiles.length}`;
+    }
+    function step(dir) {
+        let k = current;
+        for (let t = 0; t < tiles.length; t++) {
+            k = (k + dir + tiles.length) % tiles.length;
+            if (!tiles[k].dataset.broken) { showLightbox(k); return; }
+        }
+    }
+    function openLightbox(i) { showLightbox(i); lb.classList.remove('hidden-lb'); document.body.style.overflow = 'hidden'; }
+    function closeLightbox() { lb.classList.add('hidden-lb'); document.body.style.overflow = ''; }
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => step(-1));
+    document.getElementById('lbNext').addEventListener('click', () => step(1));
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+        if (lb.classList.contains('hidden-lb')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') step(-1);
+        if (e.key === 'ArrowRight') step(1);
+    });
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    // ---------- Video cover ----------
+    const siteVideo = document.getElementById('siteVideo');
+    const videoCover = document.getElementById('videoCover');
+    const videoNote = document.getElementById('videoNote');
+    const coverImg = videoCover.querySelector('img');
+    coverImg.addEventListener('error', () => { coverImg.style.display = 'none'; });
+    let videoMissing = false;
+    const showMissing = () => {
+        videoMissing = true;
+        videoNote.textContent = 'Add your video file: ' + siteVideo.querySelector('source').getAttribute('src');
+        videoNote.classList.remove('hidden');
+    };
+    siteVideo.querySelector('source').addEventListener('error', showMissing);
+    videoCover.addEventListener('click', () => {
+        if (videoMissing) return;
+        videoCover.classList.add('hidden');
+        siteVideo.play().catch(() => {});
+    });
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    // Menu, year, back to top
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backToTop = document.getElementById('backToTop');
+    menuButton?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.addEventListener('scroll', () => {
+        const show = window.scrollY > 500;
+        backToTop.classList.toggle('hidden', !show);
+        backToTop.classList.toggle('flex', show);
+    });
+</script>
 </body>
-
 </html>
